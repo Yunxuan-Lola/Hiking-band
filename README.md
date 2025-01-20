@@ -29,6 +29,18 @@ First, you need to clone the project from GitHub to your local computer:
    ```bash
    cd repository
    ```
+
+## Tips
+
+Before starting any new work, pull the latest changes from the repository to avoid merge conflicts:
+
+```bash
+git pull origin main
+```
+
+This ensures your local repository is up-to-date with the remote repository.
+
+
 ### 3. Commit Changes to the Local Git Repository
 
 1. Check which files you have modified:
@@ -84,12 +96,3 @@ After pushing, visit the GitHub repository page to confirm your commit appears i
 
 ---
 
-## Tips
-
-Before starting any new work, pull the latest changes from the repository to avoid merge conflicts:
-
-```bash
-git pull origin main
-```
-
-This ensures your local repository is up-to-date with the remote repository.
