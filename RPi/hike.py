@@ -1,6 +1,7 @@
 MET_HIKING = 6
 KCAL_PER_STEP = 0.04
 
+# detailed information
 class HikeSession:
     id = 0
     km = 0
