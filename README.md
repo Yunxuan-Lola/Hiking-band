@@ -28,18 +28,21 @@ First, you need to clone the project from GitHub to your local computer:
 1. Navigate into the project folder:
    ```bash
    cd repository
+   ```
 ### 3. Commit Changes to the Local Git Repository
 
 1. Check which files you have modified:
    ```bash
    git status
-
+   ```
 2. Add the modified files to the staging area:
    ```bash
    git add .
+   ```
 This will stage all changes. If you only want to stage a specific file, use:
    ```bash
    git add filename
+   ```
 
 ## Commit the Changes with a Message
 
@@ -47,6 +50,7 @@ Once the files are staged, commit the changes with a descriptive message:
 
 ```bash
 git commit -m "Your commit message"
+```
 
 Make sure the commit message is concise but explains the changes you made.
 
@@ -56,6 +60,7 @@ To push your changes to the remote repository, run:
 
 ```bash
 git push origin main
+```
 
 If the default branch is not main, replace main with the correct branch name (e.g., master).
 If you are using HTTPS, the system will prompt you to enter your Personal Access Token as the password.
@@ -67,6 +72,7 @@ To push your changes to the remote repository, run:
 
 ```bash
 git push origin main
+```
 
 If the default branch is not main, replace main with the correct branch name (e.g., master).
 If you are using HTTPS, the system will prompt you to enter your Personal Access Token as the password.
@@ -84,5 +90,6 @@ Before starting any new work, pull the latest changes from the repository to avo
 
 ```bash
 git pull origin main
+```
 
 This ensures your local repository is up-to-date with the remote repository.
