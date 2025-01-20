@@ -33,3 +33,56 @@ First, you need to clone the project from GitHub to your local computer:
 1. Check which files you have modified:
    ```bash
    git status
+
+2. Add the modified files to the staging area:
+   ```bash
+   git add .
+This will stage all changes. If you only want to stage a specific file, use:
+   ```bash
+   git add filename
+
+## Commit the Changes with a Message
+
+Once the files are staged, commit the changes with a descriptive message:
+
+```bash
+git commit -m "Your commit message"
+
+Make sure the commit message is concise but explains the changes you made.
+
+## Push Changes to GitHub
+
+To push your changes to the remote repository, run:
+
+```bash
+git push origin main
+
+If the default branch is not main, replace main with the correct branch name (e.g., master).
+If you are using HTTPS, the system will prompt you to enter your Personal Access Token as the password.
+If you are using SSH, it will authenticate automatically using your SSH key.
+
+## Push Changes to GitHub
+
+To push your changes to the remote repository, run:
+
+```bash
+git push origin main
+
+If the default branch is not main, replace main with the correct branch name (e.g., master).
+If you are using HTTPS, the system will prompt you to enter your Personal Access Token as the password.
+If you are using SSH, it will authenticate automatically using your SSH key.
+
+## Verify Your Changes on GitHub
+
+After pushing, visit the GitHub repository page to confirm your commit appears in the project history.
+
+---
+
+## Tips
+
+Before starting any new work, pull the latest changes from the repository to avoid merge conflicts:
+
+```bash
+git pull origin main
+
+This ensures your local repository is up-to-date with the remote repository.
