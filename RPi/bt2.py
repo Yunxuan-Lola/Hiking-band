@@ -91,7 +91,7 @@ class HubBluetooth:
                 break
 
 class NotificationDelegate(btle.DefaultDelegate):
-        """Handles incoming BLE notifications from the Watch."""
+    """Handles incoming BLE notifications from the Watch."""
     def __init__(self, callback):
         super().__init__()
         self.callback = callback

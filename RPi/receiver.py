@@ -3,7 +3,7 @@ import sqlite3
 
 import hike
 import db
-import bt
+import bt2 as bt
 
 hubdb = db.HubDatabase()
 hubbt = bt.HubBluetooth()

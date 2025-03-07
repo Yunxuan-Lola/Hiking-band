@@ -3,7 +3,7 @@ import time
 
 import hike
 
-WATCH_BT_MAC = 'XX:XX:XX:XX:XX:XX'
+WATCH_BT_MAC = '94:b5:55:c8:e9:3e'
 WATCH_BT_PORT = 1
 
 class HubBluetooth:
@@ -154,3 +154,4 @@ class HubBluetooth:
             hs.coords = map(cvt_coord, parts[3:])
 
         return hs
+
