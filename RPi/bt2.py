@@ -1,6 +1,7 @@
 import time
 from bluepy import btle
 import hike
+from datetime import datetime
 
 WATCH_BT_MAC = '94:B5:55:C8:E9:3E'
 
@@ -89,23 +90,7 @@ class HubBluetooth:
                 self.connected = False
                 self.peripheral.disconnect()
                 break
-
-class NotificationDelegate(btle.DefaultDelegate):
-    """Handles incoming BLE notifications from the Watch."""
-    def __init__(self, callback):
-        super().__init__()
-        self.callback = callback
-
-    def handleNotification(self, cHandle, data):
-        try:
-            messages = data.decode("utf-8").split("\n")
-            sessions = HubBluetooth.messages_to_sessions(messages)
-            self.callback(sessions)
-            print(f"Received data: {messages}")
-        except Exception as e:
-            print(f"Error processing data: {e}")
-
-
+    
     @staticmethod
     def messages_to_sessions(messages): #(messages: list[bytes]) -> list[hike.HikeSession]:
         """Transforms multiple incoming messages to a list of hike.HikeSession objects.
@@ -119,19 +104,14 @@ class NotificationDelegate(btle.DefaultDelegate):
                                     interpreted messages.
         """
 
-        #return list(map(HubBluetooth.mtos, messages))
+        #return list(map(HubBluetooth.mtos(), messages))
+
         return [HubBluetooth.mtos(msg.encode()) for msg in messages if msg]
 
 
     @staticmethod
     def mtos(message: bytes) -> hike.HikeSession:
         """Transforms a single message into a hike.HikeSession object.
-
-        A single message is in the following format with 0->inf number of latitude and longitude pairs:
-            id;steps;km;lat1,long1;lat2,long2;...;\\n
-
-        For example:
-            b'4;2425;324;64.83458747762428,24.83458747762428;...,...;\\n'
 
         Args:
             message: bytes to transform.
@@ -143,22 +123,34 @@ class NotificationDelegate(btle.DefaultDelegate):
             AssertionError: if the message misses information, or if it is badly formatted.
         """
         m = message.decode('utf-8')
-
-        # filtering because we might have a semi-column at the end of the message, right before the new-line character
-        parts = list(filter(lambda p: len(p) > 0, m.split(';')))
-        assert len(parts) >= 3, f"MessageProcessingError -> The incoming message doesn't contain enough information: {m}"
+        steps = int(m)
+        print("steps", steps)
 
         hs = hike.HikeSession()
-        hs.id     = int(parts[0])
-        hs.steps  = int(parts[1])
-        hs.km     = float(parts[2])
-
-        def cvt_coord(c):
-            sc = c.split(',')
-            assert len(sc) == 2, f"MessageProcessingError -> Unable to process coordinate: {c}"
-            return float(sc[0]), float(sc[1])
-
-        if len(parts) > 3:
-            hs.coords = map(cvt_coord, parts[3:])
-
+        hs.id    = datetime.now().strftime("%Y%m%d%H%M%S%f")
+        hs.steps  = steps
+        hs.km     = steps * 0.0008
+        hs.kcal   = hs.calc_kcal()
+            
         return hs
+
+
+class NotificationDelegate(btle.DefaultDelegate):
+    """Handles incoming BLE notifications from the Watch."""
+    def __init__(self, callback):
+        super().__init__()
+        self.callback = callback
+
+    def handleNotification(self, cHandle, data):
+        try:
+            messages = data.decode("utf-8").split("\n")
+            sessions = HubBluetooth.messages_to_sessions(messages)
+            #
+            for h in sessions:
+                print(hike.to_list(h))
+            self.callback(sessions)
+            print(f"Received data: {messages}")
+            
+        except Exception as e:
+            print(f"Error processing data: {e}")
+

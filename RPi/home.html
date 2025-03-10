@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+    <title>Hiking Assistant</title>
+</head>
+<body>
+    <h1>Previous Hiking Sessions</h1>
+
+    {% if sessions %}
+        <ul>
+        {% for session in sessions %}
+            <li>
+                <strong>Session ID:</strong> {{ session.id }}<br>
+                <strong>Distance (km):</strong> {{ session.km }}<br>
+                <strong>Steps:</strong> {{ session.steps }}<br>
+                <strong>Burnt Calories:</strong> {{ session.kcal }}<br>
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No sessions available.</p>
+    {% endif %}
+    
+</body>
+</html>
+

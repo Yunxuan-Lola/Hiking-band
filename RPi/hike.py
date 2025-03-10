@@ -7,7 +7,6 @@ class HikeSession:
     km = 0
     steps = 0
     kcal = -1
-    coords = []
 
     # represents a computationally intensive calculation done by lazy execution.
     def calc_kcal(self):

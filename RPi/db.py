@@ -8,10 +8,10 @@ DB_FILE_NAME = 'sessions.db'
 DB_SESSION_TABLE = {
     "name": "sessions",
     "cols": [
-        "session_id integer PRIMARY KEY",
-        "km integer",
+        "session_id text PRIMARY KEY",
+        "km float",
         "steps integer",
-        "burnt_kcal integer",
+        "burnt_kcal float",
     ]
 }
 
@@ -48,7 +48,7 @@ class HubDatabase:
     def save(self, s: hike.HikeSession):
         sessions = self.get_sessions()
 
-        if len(sessions) > 0:
+        if len(sessions) > 0: #remove?
             s.id = sorted(sessions, key=lambda sess: sess.id)[-1].id + 1
         else:
             s.id = 1
@@ -66,7 +66,7 @@ class HubDatabase:
         finally:
             self.lock.release()
 
-    def delete(self, session_id: int):
+    def delete(self, session_id: str):
         try:
             self.lock.acquire()
 
@@ -84,7 +84,7 @@ class HubDatabase:
 
         return list(map(lambda r: hike.from_list(r), rows))
 
-    def get_session(self, session_id: int) -> hike.HikeSession:
+    def get_session(self, session_id: str) -> hike.HikeSession:
         try:
             self.lock.acquire()
             rows = self.cur.execute(f"SELECT * FROM {DB_SESSION_TABLE['name']} WHERE session_id = {session_id}").fetchall()
