@@ -10,8 +10,8 @@ def notification_handler (sender, data):
     printf("from {sender}:{data}")
     
 
-async def main():
-    async with BleakClient(ADDRESS, address_type="random") as client:
+async def main(): #address_type="random" ?
+    async with BleakClient(ADDRESS, address_type="public") as client:
         printf("connectr: {client.is_connected")
         
         await client.start_notify(RX_UUID, notification_handler)

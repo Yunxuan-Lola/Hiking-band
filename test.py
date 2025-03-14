@@ -17,8 +17,11 @@ class MyDelegate(btle.DefaultDelegate):
         # ... process 'data'
 
 # Initialisation  -------
-#p = Peripheral("94:b5:55:c8:e9:3e") 
-p = Peripheral("94:b5:55:c8:e9:3e", addrType = "random")   #ESP32-DevKitC V4
+#p = Peripheral("94:b5:55:c8:e9:3e", addrType = "random", iface=0) 
+#p = Peripheral("94:b5:55:c8:e9:3e", addrType = "public", iface=0)   #ESP32-DevKitC V4
+p = Peripheral("94:b5:55:c8:e9:3e", iface=0) 
+p.setSecurityLevel("medium")
+
 
 # Setup to turn notifications on, e.g.
 svc = p.getServiceByUUID("6E400001-B5A3-F393-E0A9-E50E24DCCA9E")
@@ -39,7 +42,12 @@ while True:
 
     print("Waiting...")
     """
-    
+    try:
+        ch_Tx.write(b'keepalive', True)
+    except btle.BTLEException:
+        print("Connection lost. Reconnecting...")
+        p.connect("94:b5:55:c8:e9:3e")
+    time.sleep(5)
     nowtime = time.localtime()
     if(nowtime > lasttime):
         lasttime = nowtime
