@@ -8,9 +8,9 @@ class HikeSession:
     steps = 0
     kcal = -1
 
-    # represents a computationally intensive calculation done by lazy execution.
+    #calculate burned calories
     def calc_kcal(self):
-        self.kcal = MET_HIKING * KCAL_PER_STEP * self.steps
+        self.kcal = int(MET_HIKING * KCAL_PER_STEP * self.steps)
 
     def __repr__(self):
         return f"HikeSession{{{self.id}, {self.km}(km), {self.steps}(steps), {self.kcal:.2f}(kcal)}}"

@@ -3,16 +3,16 @@ import sqlite3
 
 import hike
 import db
-import bt2 as bt
+import bt
 
 hubdb = db.HubDatabase()
 hubbt = bt.HubBluetooth()
 
-def process_sessions(sessions: list[hike.HikeSession]):
+def process_sessions(sessions: list[hike.HikeSession], user_id):
     """Callback function to process sessions.
 
     Calculates the calories for a hiking session.
-    Saves the session into the database.
+    Saves the session into the database for the specified user.
 
     Args:
         sessions: list of `hike.HikeSession` objects to process
@@ -20,7 +20,7 @@ def process_sessions(sessions: list[hike.HikeSession]):
 
     for s in sessions:
         s.calc_kcal()
-        hubdb.save(s, 'user123')
+        hubdb.save(s, user_id)
 
 def main():
     print("Starting Bluetooth receiver.")

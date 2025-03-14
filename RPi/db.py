@@ -4,15 +4,17 @@ import hike
 import threading
 
 DB_FILE_NAME = 'sessions.db'
+user0 = 'user123'
+password0 = 'password123'
 
 DB_SESSION_TABLE = {
     "name": "sessions",
     "cols": [
         "session_id text PRIMARY KEY",
-        "session_user text",
         "km float",
         "steps integer",
         "burnt_kcal float",
+        "session_user text",
     ]
 }
 
@@ -60,15 +62,12 @@ class HubDatabase:
         self.con.commit()
         
     def init_user(self):
-        user0 = 'user123'
-        password0 = 'password123'
-        
         try:
             self.lock.acquire()
             try:
                 self.cur.execute(f"INSERT INTO {DB_PASSWORD_TABLE['name']} VALUES ('{user0}','{password0}')")
             except sqlite3.IntegrityError:
-                print("WARNING: User info already exists in database! Aborting saving current session.")
+                print("WARNING: User info already exists in database!")
             self.con.commit()
         finally:
             self.lock.release()
@@ -78,7 +77,7 @@ class HubDatabase:
             self.lock.acquire()
 
             try:
-                self.cur.execute(f"INSERT INTO {DB_SESSION_TABLE['name']} VALUES ({s.id}, '{user}', {s.km}, {s.steps}, {s.kcal})")
+                self.cur.execute(f"INSERT INTO {DB_SESSION_TABLE['name']} VALUES ('{s.id}', {s.km}, {s.steps}, {s.kcal}, '{user}')")
             except sqlite3.IntegrityError:
                 print("WARNING: Session ID already exists in database! Aborting saving current session.")
 
@@ -86,40 +85,20 @@ class HubDatabase:
         finally:
             self.lock.release()
 
-    def delete(self, session_id: str):
+    def get_sessions(self, user_id:str) -> list[hike.HikeSession]:
         try:
             self.lock.acquire()
-
-            self.cur.execute(f"DELETE FROM {DB_SESSION_TABLE['name']} WHERE session_id = {session_id}")
-            self.con.commit()
-        finally:
-            self.lock.release()
-
-    def get_sessions(self, user_id:str, pwd:str) -> list[hike.HikeSession]:
-        try:
-            self.lock.acquire()
-            if login_check(user_id, pwd)==True:
-                rows = self.cur.execute(f"SELECT * FROM {DB_SESSION_TABLE['name']} WHERE session_user={user_id}").fetchall()
-            else:
-                rows = []
+            rows = self.cur.execute(f"SELECT * FROM {DB_SESSION_TABLE['name']} WHERE session_user='{user_id}'").fetchall()
         finally:
             self.lock.release()
 
         return list(map(lambda r: hike.from_list(r), rows))
 
-    def get_session(self, session_id: str, user_id:str) -> hike.HikeSession:
-        try:
-            self.lock.acquire()
-            rows = self.cur.execute(f"SELECT * FROM {DB_SESSION_TABLE['name']} WHERE session_id = {session_id} AND session_user={user_id}").fetchall()
-        finally:
-            self.lock.release()
-
-        return hike.from_list(rows[0])
         
     def login_check(self, user: str, pwd) -> bool:
         try:
             self.lock.acquire()
-            rows = self.cur.execute(f"SELECT * FROM {DB_PASSWORD_TABLE['name']} WHERE username = {user} AND password = {pwd}").fetchall()
+            rows = self.cur.execute(f"SELECT * FROM {DB_PASSWORD_TABLE['name']} WHERE username = '{user}' AND password = '{pwd}'").fetchall()
         finally:
             self.lock.release()
 

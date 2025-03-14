@@ -1,22 +1,16 @@
-import bluetooth
 import time
-
+from bluepy import btle
 import hike
+from datetime import datetime
+import db
 
-WATCH_BT_MAC = '94:b5:55:c8:e9:3e'
-WATCH_BT_PORT = 1
+WATCH_BT_MAC = '94:B5:55:C8:E9:3E'
 
 class HubBluetooth:
-    """Handles Bluetooth pairing and synchronization with the Watch.
-
-    Attributes:
-        connected: A boolean indicating if the connection is currently established with the Watch.
-        sock: the socket object created with bluetooth.BluetoothSocket(),
-              through which the Bluetooth communication is handled.
-    """
+    """Handles Bluetooth pairing and synchronization with the Watch. """
 
     connected = False
-    sock = None
+    peripheral = None
     
     def wait_for_connection(self):
         """Synchronous function continuously trying to connect to the Watch by 2 sec intervals.
@@ -28,21 +22,28 @@ class HubBluetooth:
             while True:
                 print("Waiting for connection...")
                 try:
-                    self.sock = bluetooth.BluetoothSocket(bluetooth.RFCOMM)     #create socket object
-                    self.sock.connect((WATCH_BT_MAC, WATCH_BT_PORT))
-                    self.sock.settimeout(2)
+                    self.peripheral = btle.Peripheral(WATCH_BT_MAC, iface=0)
                     self.connected = True
-                    self.sock.send('c')
                     print("Connected to Watch!")
+                    self.send_message("c")
                     break
-                except bluetooth.btcommon.BluetoothError:
-                    time.sleep(1)
-                except Exception as e:
-                    print(e)
-                    print("Hub: Error occured while trying to connect to the Watch.")
-
+                except btle.BTLEException as e:
+                    print(f"Connection failed: {e}. Retrying in 2 seconds...")
+                    time.sleep(2)
             print("Hub: Established Bluetooth connection with Watch!")
-        print("WARNING Hub: the has already connected via Bluetooth.")
+        else:
+            print("WARNING Hub: the has already connected via Bluetooth.")
+
+    def send_message(self, message):
+        """Sends a message to the Watch over BLE."""
+        if self.connected:
+            try:
+                # Assuming handle 0x0025 is the correct characteristic for writing
+                handle = 0x0025
+                self.peripheral.writeCharacteristic(handle, message.encode())
+                print(f"Sent '{message}' to Watch")
+            except btle.BTLEException as e:
+                print(f"Error sending message: {e}")
 
     def synchronize(self, callback):
         """Continuously tries to receive data from an established connection with the Watch.
@@ -66,42 +67,27 @@ class HubBluetooth:
         remainder = b''
         while True:
             try:
-                chunk = self.sock.recv(1024)
+                # Assuming handle 0x0025 is for notifications
+                self.peripheral.setDelegate(NotificationDelegate(callback))
 
-                messages = chunk.split(b'\n')
-                messages[0] = remainder + messages[0]
-                remainder = messages.pop()
-
-                if len(messages):
-                    try:
-                        print(f"received messages: {messages}")
-
-                        sessions = HubBluetooth.messages_to_sessions(messages)
-                        callback(sessions)
-                        self.sock.send('r')
-
-                        print(f"Saved. 'r' sent to the socket!")
-
-                    except (AssertionError, ValueError) as e:
-                        print(e)
-                        print("WARNING: Receiver -> Message was corrupted. Aborting...")
+                while True:
+                    if self.peripheral.waitForNotifications(1.0):
+                        continue
+                    self.send_message("c")  # Send heartbeat to confirm connection
 
             except KeyboardInterrupt:
-                self.sock.close()
-                raise KeyboardInterrupt("Shutting down the receiver.")
+                self.peripheral.disconnect()
+                print("Shutting down the receiver.")
+                break
 
-            except bluetooth.btcommon.BluetoothError as bt_err:
-                if bt_err.errno == 11: # connection down
-                    print("Lost connection with the watch.")
-                    self.connected = False
-                    self.sock.close()
-                    break
-                elif bt_err.errno == None: # possibly occured by socket.settimeout
-                    self.sock.send('c')
-                    print("Reminder has been sent to the Watch about the attempt of the synchronization.")
-
+            except btle.BTLEException as e:
+                print(f"Lost connection with the watch: {e}")
+                self.connected = False
+                self.peripheral.disconnect()
+                break
+    
     @staticmethod
-    def messages_to_sessions(messages: list[bytes]) -> list[hike.HikeSession]:
+    def messages_to_sessions(messages): #(messages: list[bytes]) -> list[hike.HikeSession]:
         """Transforms multiple incoming messages to a list of hike.HikeSession objects.
 
         Args:
@@ -113,17 +99,12 @@ class HubBluetooth:
                                     interpreted messages.
         """
 
-        return list(map(HubBluetooth.mtos, messages))
+        return [HubBluetooth.mtos(msg.encode()) for msg in messages if msg]
+
 
     @staticmethod
     def mtos(message: bytes) -> hike.HikeSession:
         """Transforms a single message into a hike.HikeSession object.
-
-        A single message is in the following format with 0->inf number of latitude and longitude pairs:
-            id;steps;km;lat1,long1;lat2,long2;...;\\n
-
-        For example:
-            b'4;2425;324;64.83458747762428,24.83458747762428;...,...;\\n'
 
         Args:
             message: bytes to transform.
@@ -135,23 +116,34 @@ class HubBluetooth:
             AssertionError: if the message misses information, or if it is badly formatted.
         """
         m = message.decode('utf-8')
-
-        # filtering because we might have a semi-column at the end of the message, right before the new-line character
-        parts = list(filter(lambda p: len(p) > 0, m.split(';')))
-        assert len(parts) >= 3, f"MessageProcessingError -> The incoming message doesn't contain enough information: {m}"
+        steps = int(m)
+        print("steps", steps)
 
         hs = hike.HikeSession()
-        hs.id     = int(parts[0])
-        hs.steps  = int(parts[1])
-        hs.km     = float(parts[2])
-
-        def cvt_coord(c):
-            sc = c.split(',')
-            assert len(sc) == 2, f"MessageProcessingError -> Unable to process coordinate: {c}"
-            return float(sc[0]), float(sc[1])
-
-        if len(parts) > 3:
-            hs.coords = map(cvt_coord, parts[3:])
-
+        hs.id     = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        hs.steps  = steps
+        hs.km     = round(steps * 0.0008, 3)
+        hs.kcal   = hs.calc_kcal()
+            
         return hs
+
+
+class NotificationDelegate(btle.DefaultDelegate):
+    """Handles incoming BLE notifications from the Watch."""
+    def __init__(self, callback):
+        super().__init__()
+        self.callback = callback
+
+    def handleNotification(self, cHandle, data):
+        try:
+            messages = data.decode("utf-8").split("\n")
+            sessions = HubBluetooth.messages_to_sessions(messages)
+            #
+            for h in sessions:
+                print(hike.to_list(h))
+            self.callback(sessions, db.user0)
+            print(f"Received data: {messages}")
+            
+        except Exception as e:
+            print(f"Error processing data: {e}")
 

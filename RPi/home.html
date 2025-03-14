@@ -3,16 +3,17 @@
     <title>Hiking Assistant</title>
 </head>
 <body>
-    <h1>Previous Hiking Sessions</h1>
+    <h1>Previous Hiking Sessions for {{user}}</h1>
 
     {% if sessions %}
         <ul>
-        {% for session in sessions %}
+        {% for session in sessions | reverse %}
             <li>
-                <strong>Session ID:</strong> {{ session.id }}<br>
+                <strong>Session:</strong> {{ session.id | string }}<br>
+		<strong>Steps:</strong> {{ session.steps }}<br>
                 <strong>Distance (km):</strong> {{ session.km }}<br>
-                <strong>Steps:</strong> {{ session.steps }}<br>
-                <strong>Burnt Calories:</strong> {{ session.kcal }}<br>
+                <strong>Burnt Calories (kcal):</strong> {{ session.kcal | int}}<br>
+		<br>
 	    </li>
         {% endfor %}
         </ul>
