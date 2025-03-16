@@ -26,6 +26,8 @@ DB_PASSWORD_TABLE = {
     ]
 }
 
+# Configure logging
+logging.basicConfig(filename="db.log", level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
 # lock object so multithreaded use of the same
 # HubDatabase object 
@@ -60,14 +62,17 @@ class HubDatabase:
             self.cur.execute(create_table_sql)
 
         self.con.commit()
+        logging.info("Database initialized successfully.")
         
     def init_user(self):
         try:
             self.lock.acquire()
             try:
                 self.cur.execute(f"INSERT INTO {DB_PASSWORD_TABLE['name']} VALUES ('{user0}','{password0}')")
+                logging.info("Default user initialized.")
             except sqlite3.IntegrityError:
                 print("WARNING: User info already exists in database!")
+                logging.warning("User already exists. Skipping initialization.")
             self.con.commit()
         finally:
             self.lock.release()
@@ -78,9 +83,10 @@ class HubDatabase:
 
             try:
                 self.cur.execute(f"INSERT INTO {DB_SESSION_TABLE['name']} VALUES ('{s.id}', {s.km}, {s.steps}, {s.kcal}, '{user}')")
+                logging.info(f"Session {s.id} saved successfully for user {user}.")
             except sqlite3.IntegrityError:
                 print("WARNING: Session ID already exists in database! Aborting saving current session.")
-
+                logging.error(f"Session ID {s.id} already exists. Aborting save.")
             self.con.commit()
         finally:
             self.lock.release()
@@ -111,3 +117,4 @@ class HubDatabase:
     def __del__(self):
         self.cur.close()
         self.con.close()
+        logging.info("Database connection closed.")
