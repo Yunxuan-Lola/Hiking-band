@@ -3,6 +3,7 @@
 LOG_DIR="./logs"
 DB_FILE="sessions.db"
 PYTHON_ENV="python"  # Modify if using a virtualenv
+WPORT=5001
 
 mkdir -p $LOG_DIR
 
@@ -16,8 +17,14 @@ else
 fi
 
 echo "Starting Bluetooth receiver..."
-while true; do
-    $PYTHON_ENV receiver.py >> $LOG_DIR/receiver.log 2>&1
-    echo "Receiver crashed. Restarting in 5 seconds..."
-    sleep 5
-done
+nohup $PYTHON_ENV receiver.py >> $LOG_DIR/receiver.log 2>&1 &
+
+echo "Checking if port $WPORT is in use..."
+if lsof -i :$WPORT | grep LISTEN; then
+    echo "!! Port $WPORT is already in use. Web server will NOT start!"
+else
+    echo " Port $WPORT is free. Starting Web Server..."
+    nohup $PYTHON_ENV wserver.py >> $LOG_DIR/wserver.log 2>&1 &
+fi
+
+echo "All services started successfully."
