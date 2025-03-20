@@ -1,8 +1,13 @@
+#include <BLEScan.h>
+#include <BLEAdvertisedDevice.h>
 #include "config.h"
 #include <BLEDevice.h>
 #include <BLEServer.h>
 #include <BLEUtils.h>
 #include <BLE2902.h>
+// #include <BluetoothSerial.h>
+
+// BluetoothSerial SerialBT;
 
 TTGOClass *watch;
 TFT_eSPI *tft;
@@ -30,19 +35,46 @@ class MyServerCallbacks: public BLEServerCallbacks {
     void onDisconnect(BLEServer* pServer) { deviceConnected = false; }
 };
 
+
+void successful_print()
+{
+    tft->fillRoundRect(0, 0, 240, 50, 10, TFT_BLACK);
+    tft->setTextColor(TFT_RED);
+    tft->setCursor(20, 20);
+    tft->print("Uploaded");
+    Serial.print("Upload successfully");
+}
+
+// void error_print()
+// {
+//     tft->fillRoundRect(0, 0, 240, 50, 10, TFT_BLACK);
+//     tft->setTextColor(TFT_RED);
+//     tft->setCursor(20, 20);
+//     tft->print("Fail to upload");
+//     Serial.print("Fail to upload");
+// }
+
 class MyCallbacks: public BLECharacteristicCallbacks {
     void onWrite(BLECharacteristic *pCharacteristic) {
         std::string rxValue = pCharacteristic->getValue();
         if (rxValue.length() > 0) {
             Serial.print("Received Value: ");
             Serial.println(rxValue.c_str());
+            if (rxValue == "c") {
+                successful_print(); 
+                delay(2000);
+                drawButton(stepCounting);
+            } 
+            // else {
+            //     error_print();  // 
+            // }
         }
     }
 };
 
 void drawButton(bool isRunning) {
+    tft->fillRoundRect(0, 0, 240, 50, 10, TFT_BLACK);
     tft->fillRoundRect(0, 130, 240, 90, 10, TFT_BLACK);
-    tft->fillRoundRect(0, 0, 240, 100, 10, TFT_BLACK);    //delete upload message
     tft->fillRoundRect(50, 180, 120, 40, 10, isRunning ? TFT_RED : TFT_GREEN);
     tft->setTextColor(TFT_WHITE);
     tft->setCursor(80, 195);
@@ -128,21 +160,6 @@ void setup() {
 
 }
 
-void successful_print()
-{
-    tft->fillRoundRect(0, 0, 240, 100, 10, TFT_BLACK);
-    tft->setTextColor(TFT_RED);
-    tft->setCursor(20, 20);
-    tft->print("Upload successfully");
-}
-
-void error_print()
-{
-    tft->fillRoundRect(0, 0, 240, 100, 10, TFT_BLACK);
-    tft->setTextColor(TFT_RED);
-    tft->setCursor(20, 20);
-    tft->print("Fail to upload");
-}
 
 void loop() {
     if (watch->getTouch(x, y)) {
@@ -167,23 +184,9 @@ void loop() {
                         sprintf(buffer, "%d", previousSteps);
                         pTxCharacteristic->setValue(buffer);
                         pTxCharacteristic->notify();
-                      }
-                      if (SerialBT.available()) {  // Check if Pi sent a message
-                        String receivedMsg = SerialBT.readString();  // Read message
-                        if (receiveMsg == '1')
-                        {
-                            successful_print();
-                            break;
-                        }
-                        else
-                            error_print();
-                        //Serial.print("Received from Raspberry Pi: ");
-                        //Serial.println(receivedMsg);
-                      }
+                      }                   
                   }
-                      //drawButton(1)
                   else if (x > 120 && x < 220 && y > 180 && y < 220)  {
-                          //drawButton(1)
                         break;
                   }
                 }
