@@ -1,10 +1,36 @@
-bt.py: bluetooth method to communicate Raspberry Pi with ESP32  
-db.py: database that restore the collected data in Raspberry Pi  
-Hike.py: create Hikesession class that restore the detailed information  
-Receiver.py: communication process  
-wserver: simple Web application based on Flask
+## Project description
 
+### Project introduction
+A wearable hiking tracker built on TTGO T-Watch 2020 V3 and a Raspberry Pi 3B+ hub, capable of tracking and syncing hiking session data (steps, distance, calories) with a web interface.
 
+### Requirement
+TTGO T-Watch 2020 V3
+
+Raspberry Pi 3B+ with Bluetooth
+
+Python 3.10+, Flask, BluePy
+
+Arduino IDE for Watch firmware
+
+### File structure
+Smartwatch Side (Arduino):
+1. hikingassistant.ino: main logic, button UI & BLE communication
+2. config.h: device config
+
+Raspberry Pi Side(Python):
+1. hike.py: Defines the HikeSession class for sessions 
+2. bt.py: Bluetooth handler class and functions for syncing with watch 
+3. receiver.py: Reads and parses incoming BLE data 
+4. db.py: Manages database creation, queries, and updates 
+5. wserver.py: Runs Flask-based web interface
+6. home.html: Displays the session data on the website 
+7. login.html: Creates a login page for users 
+
+Design Report
+
+User Manual
+
+Software Requirements Specification(SRS) 
 
 ## How to Clone, Modify, and Push Changes
 
