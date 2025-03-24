@@ -5,9 +5,6 @@
 #include <BLEServer.h>
 #include <BLEUtils.h>
 #include <BLE2902.h>
-// #include <BluetoothSerial.h>
-
-// BluetoothSerial SerialBT;
 
 TTGOClass *watch;
 TFT_eSPI *tft;
@@ -25,6 +22,7 @@ BLECharacteristic *pTxCharacteristic;
 BLESecurity *pSecurity = new BLESecurity();
 bool deviceConnected = false;
 bool oldDeviceConnected = false;
+bool choose = false;
 
 #define SERVICE_UUID "6E400001-B5A3-F393-E0A9-E50E24DCCA9E"
 #define CHARACTERISTIC_UUID_RX "6E400002-B5A3-F393-E0A9-E50E24DCCA9E"
@@ -45,29 +43,16 @@ void successful_print()
     Serial.print("Upload successfully");
 }
 
-// void error_print()
-// {
-//     tft->fillRoundRect(0, 0, 240, 50, 10, TFT_BLACK);
-//     tft->setTextColor(TFT_RED);
-//     tft->setCursor(20, 20);
-//     tft->print("Fail to upload");
-//     Serial.print("Fail to upload");
-// }
-
 class MyCallbacks: public BLECharacteristicCallbacks {
     void onWrite(BLECharacteristic *pCharacteristic) {
         std::string rxValue = pCharacteristic->getValue();
-        if (rxValue.length() > 0) {
-            Serial.print("Received Value: ");
-            Serial.println(rxValue.c_str());
-            if (rxValue == "c") {
-                successful_print(); 
-                delay(2000);
-                drawButton(stepCounting);
-            } 
-            // else {
-            //     error_print();  // 
-            // }
+        Serial.print("Received Value: ");
+        Serial.println(rxValue.c_str());
+        if (rxValue == "r") {
+            successful_print(); 
+            delay(2000);
+            drawButton(stepCounting);
+            choose = false;
         }
     }
 };
@@ -142,7 +127,8 @@ void setup() {
     pServer = BLEDevice::createServer();
     pServer->setCallbacks(new MyServerCallbacks());
     BLEService *pService = pServer->createService(SERVICE_UUID);
-    
+    BLECharacteristic::PROPERTY_WRITE | BLECharacteristic::PROPERTY_WRITE_NR;
+
     pTxCharacteristic = pService->createCharacteristic(
         CHARACTERISTIC_UUID_TX, BLECharacteristic::PROPERTY_NOTIFY
     );
@@ -160,9 +146,8 @@ void setup() {
 
 }
 
-
 void loop() {
-    if (watch->getTouch(x, y)) {
+    if (watch->getTouch(x, y)&&(!choose)) {
         if (x > 50 && x < 170 && y > 180 && y < 220) {
             stepCounting = !stepCounting;
             if (stepCounting) {
@@ -175,8 +160,9 @@ void loop() {
                 previousDistance = previousSteps * 0.0008;
                 displayPreviousSession();
                 uploadChoose();
+                choose = true;
                 delay(500);
-                while (1) {
+                while (choose) {
                 if(watch->getTouch(x, y))
                 {
                   if (x > 20 && x < 120 && y > 180 && y < 220) {
@@ -184,6 +170,7 @@ void loop() {
                         sprintf(buffer, "%d", previousSteps);
                         pTxCharacteristic->setValue(buffer);
                         pTxCharacteristic->notify();
+                        delay(500);
                       }                   
                   }
                   else if (x > 120 && x < 220 && y > 180 && y < 220)  {
@@ -194,6 +181,7 @@ void loop() {
                 
             }
             drawButton(stepCounting);
+            choose = false;
             delay(300);
         }
     }
