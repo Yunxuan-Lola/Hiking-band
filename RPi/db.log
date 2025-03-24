@@ -1,0 +1,1042 @@
+2025-03-24 11:09:06,502 - INFO - Database initialized successfully.
+2025-03-24 11:09:06,504 - WARNING - User already exists. Skipping initialization.
+2025-03-24 11:15:59,218 - INFO - Database initialized successfully.
+2025-03-24 11:15:59,219 - WARNING - User already exists. Skipping initialization.
+2025-03-24 11:18:34,987 - INFO - Database initialized successfully.
+2025-03-24 11:18:34,989 - WARNING - User already exists. Skipping initialization.
+2025-03-24 11:21:26,602 - INFO - Database initialized successfully.
+2025-03-24 11:21:26,605 - WARNING - User already exists. Skipping initialization.
+2025-03-24 11:21:40,097 - INFO - Session 2025-03-24 11:21:40 saved successfully for user user123.
+2025-03-24 11:21:40,130 - INFO - Processed and saved session 2025-03-24 11:21:40 for user user123.
+2025-03-24 11:21:40,133 - ERROR - Session ID 2025-03-24 11:21:40 already exists. Aborting save.
+2025-03-24 11:21:40,134 - INFO - Processed and saved session 2025-03-24 11:21:40 for user user123.
+2025-03-24 11:21:40,137 - ERROR - Session ID 2025-03-24 11:21:40 already exists. Aborting save.
+2025-03-24 11:21:40,138 - INFO - Processed and saved session 2025-03-24 11:21:40 for user user123.
+2025-03-24 11:21:40,142 - ERROR - Session ID 2025-03-24 11:21:40 already exists. Aborting save.
+2025-03-24 11:21:40,143 - INFO - Processed and saved session 2025-03-24 11:21:40 for user user123.
+2025-03-24 11:21:40,146 - ERROR - Session ID 2025-03-24 11:21:40 already exists. Aborting save.
+2025-03-24 11:21:40,147 - INFO - Processed and saved session 2025-03-24 11:21:40 for user user123.
+2025-03-24 11:21:40,149 - ERROR - Session ID 2025-03-24 11:21:40 already exists. Aborting save.
+2025-03-24 11:21:40,150 - INFO - Processed and saved session 2025-03-24 11:21:40 for user user123.
+2025-03-24 11:21:40,152 - ERROR - Session ID 2025-03-24 11:21:40 already exists. Aborting save.
+2025-03-24 11:21:40,153 - INFO - Processed and saved session 2025-03-24 11:21:40 for user user123.
+2025-03-24 11:21:40,154 - ERROR - Session ID 2025-03-24 11:21:40 already exists. Aborting save.
+2025-03-24 11:21:40,155 - INFO - Processed and saved session 2025-03-24 11:21:40 for user user123.
+2025-03-24 11:21:40,193 - ERROR - Session ID 2025-03-24 11:21:40 already exists. Aborting save.
+2025-03-24 11:21:40,195 - INFO - Processed and saved session 2025-03-24 11:21:40 for user user123.
+2025-03-24 11:21:40,199 - ERROR - Session ID 2025-03-24 11:21:40 already exists. Aborting save.
+2025-03-24 11:21:40,200 - INFO - Processed and saved session 2025-03-24 11:21:40 for user user123.
+2025-03-24 11:21:40,202 - ERROR - Session ID 2025-03-24 11:21:40 already exists. Aborting save.
+2025-03-24 11:21:40,203 - INFO - Processed and saved session 2025-03-24 11:21:40 for user user123.
+2025-03-24 11:21:40,205 - ERROR - Session ID 2025-03-24 11:21:40 already exists. Aborting save.
+2025-03-24 11:21:40,206 - INFO - Processed and saved session 2025-03-24 11:21:40 for user user123.
+2025-03-24 11:21:40,240 - ERROR - Session ID 2025-03-24 11:21:40 already exists. Aborting save.
+2025-03-24 11:21:40,241 - INFO - Processed and saved session 2025-03-24 11:21:40 for user user123.
+2025-03-24 11:21:40,242 - ERROR - Session ID 2025-03-24 11:21:40 already exists. Aborting save.
+2025-03-24 11:21:40,242 - INFO - Processed and saved session 2025-03-24 11:21:40 for user user123.
+2025-03-24 11:21:40,244 - ERROR - Session ID 2025-03-24 11:21:40 already exists. Aborting save.
+2025-03-24 11:21:40,244 - INFO - Processed and saved session 2025-03-24 11:21:40 for user user123.
+2025-03-24 11:21:40,245 - ERROR - Session ID 2025-03-24 11:21:40 already exists. Aborting save.
+2025-03-24 11:21:40,246 - INFO - Processed and saved session 2025-03-24 11:21:40 for user user123.
+2025-03-24 11:21:40,289 - ERROR - Session ID 2025-03-24 11:21:40 already exists. Aborting save.
+2025-03-24 11:21:40,289 - INFO - Processed and saved session 2025-03-24 11:21:40 for user user123.
+2025-03-24 11:21:40,291 - ERROR - Session ID 2025-03-24 11:21:40 already exists. Aborting save.
+2025-03-24 11:21:40,291 - INFO - Processed and saved session 2025-03-24 11:21:40 for user user123.
+2025-03-24 11:21:40,292 - ERROR - Session ID 2025-03-24 11:21:40 already exists. Aborting save.
+2025-03-24 11:21:40,293 - INFO - Processed and saved session 2025-03-24 11:21:40 for user user123.
+2025-03-24 11:21:40,294 - ERROR - Session ID 2025-03-24 11:21:40 already exists. Aborting save.
+2025-03-24 11:21:40,294 - INFO - Processed and saved session 2025-03-24 11:21:40 for user user123.
+2025-03-24 11:21:40,337 - ERROR - Session ID 2025-03-24 11:21:40 already exists. Aborting save.
+2025-03-24 11:21:40,338 - INFO - Processed and saved session 2025-03-24 11:21:40 for user user123.
+2025-03-24 11:21:40,339 - ERROR - Session ID 2025-03-24 11:21:40 already exists. Aborting save.
+2025-03-24 11:21:40,340 - INFO - Processed and saved session 2025-03-24 11:21:40 for user user123.
+2025-03-24 11:21:40,341 - ERROR - Session ID 2025-03-24 11:21:40 already exists. Aborting save.
+2025-03-24 11:21:40,341 - INFO - Processed and saved session 2025-03-24 11:21:40 for user user123.
+2025-03-24 11:21:40,342 - ERROR - Session ID 2025-03-24 11:21:40 already exists. Aborting save.
+2025-03-24 11:21:40,342 - INFO - Processed and saved session 2025-03-24 11:21:40 for user user123.
+2025-03-24 11:21:40,386 - ERROR - Session ID 2025-03-24 11:21:40 already exists. Aborting save.
+2025-03-24 11:21:40,387 - INFO - Processed and saved session 2025-03-24 11:21:40 for user user123.
+2025-03-24 11:21:40,388 - ERROR - Session ID 2025-03-24 11:21:40 already exists. Aborting save.
+2025-03-24 11:21:40,389 - INFO - Processed and saved session 2025-03-24 11:21:40 for user user123.
+2025-03-24 11:21:40,390 - ERROR - Session ID 2025-03-24 11:21:40 already exists. Aborting save.
+2025-03-24 11:21:40,391 - INFO - Processed and saved session 2025-03-24 11:21:40 for user user123.
+2025-03-24 11:21:40,392 - ERROR - Session ID 2025-03-24 11:21:40 already exists. Aborting save.
+2025-03-24 11:21:40,393 - INFO - Processed and saved session 2025-03-24 11:21:40 for user user123.
+2025-03-24 11:21:40,435 - ERROR - Session ID 2025-03-24 11:21:40 already exists. Aborting save.
+2025-03-24 11:21:40,435 - INFO - Processed and saved session 2025-03-24 11:21:40 for user user123.
+2025-03-24 11:21:40,436 - ERROR - Session ID 2025-03-24 11:21:40 already exists. Aborting save.
+2025-03-24 11:21:40,437 - INFO - Processed and saved session 2025-03-24 11:21:40 for user user123.
+2025-03-24 11:21:40,438 - ERROR - Session ID 2025-03-24 11:21:40 already exists. Aborting save.
+2025-03-24 11:21:40,438 - INFO - Processed and saved session 2025-03-24 11:21:40 for user user123.
+2025-03-24 11:21:40,439 - ERROR - Session ID 2025-03-24 11:21:40 already exists. Aborting save.
+2025-03-24 11:21:40,439 - INFO - Processed and saved session 2025-03-24 11:21:40 for user user123.
+2025-03-24 11:21:40,483 - ERROR - Session ID 2025-03-24 11:21:40 already exists. Aborting save.
+2025-03-24 11:21:40,484 - INFO - Processed and saved session 2025-03-24 11:21:40 for user user123.
+2025-03-24 11:21:40,485 - ERROR - Session ID 2025-03-24 11:21:40 already exists. Aborting save.
+2025-03-24 11:21:40,485 - INFO - Processed and saved session 2025-03-24 11:21:40 for user user123.
+2025-03-24 11:21:44,043 - INFO - Session 2025-03-24 11:21:44 saved successfully for user user123.
+2025-03-24 11:21:44,059 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,060 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,061 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,061 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,062 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,062 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,063 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,091 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,091 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,093 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,093 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,094 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,094 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,095 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,095 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,188 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,189 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,190 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,190 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,191 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,191 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,193 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,193 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,237 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,238 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,239 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,240 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,241 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,241 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,286 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,286 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,287 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,287 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,289 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,289 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,290 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,291 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,335 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,335 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,336 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,337 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,338 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,338 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,339 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,339 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,383 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,384 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,386 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,386 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,388 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,388 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,390 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,390 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,433 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,433 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,434 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,434 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,435 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,435 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,437 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,437 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,481 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,482 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,482 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,483 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,483 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,484 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,627 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,628 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,629 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,629 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,676 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,677 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,678 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,678 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,679 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,680 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,681 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,682 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,725 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,726 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,727 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,727 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,728 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,728 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,729 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,730 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,773 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,774 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,775 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,776 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,777 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,777 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,778 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,779 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,822 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,822 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,823 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,823 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,825 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,825 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,826 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,826 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,871 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,871 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,873 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,873 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,874 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,874 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,875 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,875 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,920 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,920 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,921 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,922 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,922 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,923 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,923 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,924 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,969 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,969 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,970 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,971 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,971 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,972 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:44,973 - ERROR - Session ID 2025-03-24 11:21:44 already exists. Aborting save.
+2025-03-24 11:21:44,973 - INFO - Processed and saved session 2025-03-24 11:21:44 for user user123.
+2025-03-24 11:21:45,066 - INFO - Session 2025-03-24 11:21:45 saved successfully for user user123.
+2025-03-24 11:21:45,081 - INFO - Processed and saved session 2025-03-24 11:21:45 for user user123.
+2025-03-24 11:21:45,082 - ERROR - Session ID 2025-03-24 11:21:45 already exists. Aborting save.
+2025-03-24 11:21:45,083 - INFO - Processed and saved session 2025-03-24 11:21:45 for user user123.
+2025-03-24 11:21:45,083 - ERROR - Session ID 2025-03-24 11:21:45 already exists. Aborting save.
+2025-03-24 11:21:45,084 - INFO - Processed and saved session 2025-03-24 11:21:45 for user user123.
+2025-03-24 11:21:45,085 - ERROR - Session ID 2025-03-24 11:21:45 already exists. Aborting save.
+2025-03-24 11:21:45,085 - INFO - Processed and saved session 2025-03-24 11:21:45 for user user123.
+2025-03-24 11:21:45,115 - ERROR - Session ID 2025-03-24 11:21:45 already exists. Aborting save.
+2025-03-24 11:21:45,115 - INFO - Processed and saved session 2025-03-24 11:21:45 for user user123.
+2025-03-24 11:21:45,116 - ERROR - Session ID 2025-03-24 11:21:45 already exists. Aborting save.
+2025-03-24 11:21:45,117 - INFO - Processed and saved session 2025-03-24 11:21:45 for user user123.
+2025-03-24 11:22:15,340 - INFO - Session 2025-03-24 11:22:15 saved successfully for user user123.
+2025-03-24 11:22:15,359 - INFO - Processed and saved session 2025-03-24 11:22:15 for user user123.
+2025-03-24 11:22:15,389 - ERROR - Session ID 2025-03-24 11:22:15 already exists. Aborting save.
+2025-03-24 11:22:15,390 - INFO - Processed and saved session 2025-03-24 11:22:15 for user user123.
+2025-03-24 11:22:15,391 - ERROR - Session ID 2025-03-24 11:22:15 already exists. Aborting save.
+2025-03-24 11:22:15,391 - INFO - Processed and saved session 2025-03-24 11:22:15 for user user123.
+2025-03-24 11:22:15,392 - ERROR - Session ID 2025-03-24 11:22:15 already exists. Aborting save.
+2025-03-24 11:22:15,393 - INFO - Processed and saved session 2025-03-24 11:22:15 for user user123.
+2025-03-24 11:22:15,394 - ERROR - Session ID 2025-03-24 11:22:15 already exists. Aborting save.
+2025-03-24 11:22:15,394 - INFO - Processed and saved session 2025-03-24 11:22:15 for user user123.
+2025-03-24 11:22:15,438 - ERROR - Session ID 2025-03-24 11:22:15 already exists. Aborting save.
+2025-03-24 11:22:15,438 - INFO - Processed and saved session 2025-03-24 11:22:15 for user user123.
+2025-03-24 11:22:15,439 - ERROR - Session ID 2025-03-24 11:22:15 already exists. Aborting save.
+2025-03-24 11:22:15,440 - INFO - Processed and saved session 2025-03-24 11:22:15 for user user123.
+2025-03-24 11:22:15,441 - ERROR - Session ID 2025-03-24 11:22:15 already exists. Aborting save.
+2025-03-24 11:22:15,441 - INFO - Processed and saved session 2025-03-24 11:22:15 for user user123.
+2025-03-24 11:22:15,442 - ERROR - Session ID 2025-03-24 11:22:15 already exists. Aborting save.
+2025-03-24 11:22:15,442 - INFO - Processed and saved session 2025-03-24 11:22:15 for user user123.
+2025-03-24 11:22:15,486 - ERROR - Session ID 2025-03-24 11:22:15 already exists. Aborting save.
+2025-03-24 11:22:15,487 - INFO - Processed and saved session 2025-03-24 11:22:15 for user user123.
+2025-03-24 11:22:15,488 - ERROR - Session ID 2025-03-24 11:22:15 already exists. Aborting save.
+2025-03-24 11:22:15,489 - INFO - Processed and saved session 2025-03-24 11:22:15 for user user123.
+2025-03-24 11:22:15,490 - ERROR - Session ID 2025-03-24 11:22:15 already exists. Aborting save.
+2025-03-24 11:22:15,490 - INFO - Processed and saved session 2025-03-24 11:22:15 for user user123.
+2025-03-24 11:22:15,491 - ERROR - Session ID 2025-03-24 11:22:15 already exists. Aborting save.
+2025-03-24 11:22:15,491 - INFO - Processed and saved session 2025-03-24 11:22:15 for user user123.
+2025-03-24 11:22:15,535 - ERROR - Session ID 2025-03-24 11:22:15 already exists. Aborting save.
+2025-03-24 11:22:15,536 - INFO - Processed and saved session 2025-03-24 11:22:15 for user user123.
+2025-03-24 11:22:15,537 - ERROR - Session ID 2025-03-24 11:22:15 already exists. Aborting save.
+2025-03-24 11:22:15,537 - INFO - Processed and saved session 2025-03-24 11:22:15 for user user123.
+2025-03-24 11:22:15,538 - ERROR - Session ID 2025-03-24 11:22:15 already exists. Aborting save.
+2025-03-24 11:22:15,538 - INFO - Processed and saved session 2025-03-24 11:22:15 for user user123.
+2025-03-24 11:22:15,539 - ERROR - Session ID 2025-03-24 11:22:15 already exists. Aborting save.
+2025-03-24 11:22:15,539 - INFO - Processed and saved session 2025-03-24 11:22:15 for user user123.
+2025-03-24 11:22:15,584 - ERROR - Session ID 2025-03-24 11:22:15 already exists. Aborting save.
+2025-03-24 11:22:15,585 - INFO - Processed and saved session 2025-03-24 11:22:15 for user user123.
+2025-03-24 11:22:15,586 - ERROR - Session ID 2025-03-24 11:22:15 already exists. Aborting save.
+2025-03-24 11:22:15,586 - INFO - Processed and saved session 2025-03-24 11:22:15 for user user123.
+2025-03-24 11:22:15,587 - ERROR - Session ID 2025-03-24 11:22:15 already exists. Aborting save.
+2025-03-24 11:22:15,587 - INFO - Processed and saved session 2025-03-24 11:22:15 for user user123.
+2025-03-24 11:22:15,588 - ERROR - Session ID 2025-03-24 11:22:15 already exists. Aborting save.
+2025-03-24 11:22:15,589 - INFO - Processed and saved session 2025-03-24 11:22:15 for user user123.
+2025-03-24 11:22:15,632 - ERROR - Session ID 2025-03-24 11:22:15 already exists. Aborting save.
+2025-03-24 11:22:15,633 - INFO - Processed and saved session 2025-03-24 11:22:15 for user user123.
+2025-03-24 11:22:15,634 - ERROR - Session ID 2025-03-24 11:22:15 already exists. Aborting save.
+2025-03-24 11:22:15,634 - INFO - Processed and saved session 2025-03-24 11:22:15 for user user123.
+2025-03-24 11:22:15,635 - ERROR - Session ID 2025-03-24 11:22:15 already exists. Aborting save.
+2025-03-24 11:22:15,636 - INFO - Processed and saved session 2025-03-24 11:22:15 for user user123.
+2025-03-24 11:22:15,637 - ERROR - Session ID 2025-03-24 11:22:15 already exists. Aborting save.
+2025-03-24 11:22:15,637 - INFO - Processed and saved session 2025-03-24 11:22:15 for user user123.
+2025-03-24 11:22:15,681 - ERROR - Session ID 2025-03-24 11:22:15 already exists. Aborting save.
+2025-03-24 11:22:15,682 - INFO - Processed and saved session 2025-03-24 11:22:15 for user user123.
+2025-03-24 11:22:15,683 - ERROR - Session ID 2025-03-24 11:22:15 already exists. Aborting save.
+2025-03-24 11:22:15,684 - INFO - Processed and saved session 2025-03-24 11:22:15 for user user123.
+2025-03-24 11:22:15,685 - ERROR - Session ID 2025-03-24 11:22:15 already exists. Aborting save.
+2025-03-24 11:22:15,685 - INFO - Processed and saved session 2025-03-24 11:22:15 for user user123.
+2025-03-24 11:22:15,686 - ERROR - Session ID 2025-03-24 11:22:15 already exists. Aborting save.
+2025-03-24 11:22:15,687 - INFO - Processed and saved session 2025-03-24 11:22:15 for user user123.
+2025-03-24 11:22:15,730 - ERROR - Session ID 2025-03-24 11:22:15 already exists. Aborting save.
+2025-03-24 11:22:15,731 - INFO - Processed and saved session 2025-03-24 11:22:15 for user user123.
+2025-03-24 11:22:15,732 - ERROR - Session ID 2025-03-24 11:22:15 already exists. Aborting save.
+2025-03-24 11:22:15,733 - INFO - Processed and saved session 2025-03-24 11:22:15 for user user123.
+2025-03-24 11:22:15,734 - ERROR - Session ID 2025-03-24 11:22:15 already exists. Aborting save.
+2025-03-24 11:22:15,735 - INFO - Processed and saved session 2025-03-24 11:22:15 for user user123.
+2025-03-24 11:22:15,736 - ERROR - Session ID 2025-03-24 11:22:15 already exists. Aborting save.
+2025-03-24 11:22:15,736 - INFO - Processed and saved session 2025-03-24 11:22:15 for user user123.
+2025-03-24 11:22:15,779 - ERROR - Session ID 2025-03-24 11:22:15 already exists. Aborting save.
+2025-03-24 11:22:15,779 - INFO - Processed and saved session 2025-03-24 11:22:15 for user user123.
+2025-03-24 11:22:15,780 - ERROR - Session ID 2025-03-24 11:22:15 already exists. Aborting save.
+2025-03-24 11:22:15,781 - INFO - Processed and saved session 2025-03-24 11:22:15 for user user123.
+2025-03-24 11:23:53,664 - INFO - Database initialized successfully.
+2025-03-24 11:23:53,821 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://10.100.46.99:5001
+2025-03-24 11:23:53,822 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-24 11:23:53,844 - INFO -  * Restarting with stat
+2025-03-24 11:23:54,829 - INFO - Database initialized successfully.
+2025-03-24 11:23:54,876 - WARNING -  * Debugger is active!
+2025-03-24 11:23:54,881 - INFO -  * Debugger PIN: 665-372-630
+2025-03-24 11:24:50,393 - INFO - 10.100.46.99 - - [24/Mar/2025 11:24:50] "GET / HTTP/1.1" 200 -
+2025-03-24 11:24:51,271 - INFO - 10.100.46.99 - - [24/Mar/2025 11:24:51] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-24 11:25:04,000 - INFO - 10.100.46.99 - - [24/Mar/2025 11:25:04] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-03-24 11:25:04,070 - INFO - 10.100.46.99 - - [24/Mar/2025 11:25:04] "GET /home HTTP/1.1" 200 -
+2025-03-24 11:26:48,435 - INFO - Database initialized successfully.
+2025-03-24 11:26:48,436 - WARNING - User already exists. Skipping initialization.
+2025-03-24 13:28:43,372 - INFO - Database initialized successfully.
+2025-03-24 13:28:43,383 - WARNING - User already exists. Skipping initialization.
+2025-03-24 13:29:05,986 - INFO - Session 2025-03-24 13:29:05 saved successfully for user user123.
+2025-03-24 13:29:06,004 - INFO - Processed and saved session 2025-03-24 13:29:05 for user user123.
+2025-03-24 13:29:06,009 - INFO - Session 2025-03-24 13:29:06 saved successfully for user user123.
+2025-03-24 13:29:06,027 - INFO - Processed and saved session 2025-03-24 13:29:06 for user user123.
+2025-03-24 13:29:06,029 - ERROR - Session ID 2025-03-24 13:29:06 already exists. Aborting save.
+2025-03-24 13:29:06,030 - INFO - Processed and saved session 2025-03-24 13:29:06 for user user123.
+2025-03-24 13:29:06,032 - ERROR - Session ID 2025-03-24 13:29:06 already exists. Aborting save.
+2025-03-24 13:29:06,033 - INFO - Processed and saved session 2025-03-24 13:29:06 for user user123.
+2025-03-24 13:29:06,034 - ERROR - Session ID 2025-03-24 13:29:06 already exists. Aborting save.
+2025-03-24 13:29:06,035 - INFO - Processed and saved session 2025-03-24 13:29:06 for user user123.
+2025-03-24 13:29:06,037 - ERROR - Session ID 2025-03-24 13:29:06 already exists. Aborting save.
+2025-03-24 13:29:06,038 - INFO - Processed and saved session 2025-03-24 13:29:06 for user user123.
+2025-03-24 13:29:06,040 - ERROR - Session ID 2025-03-24 13:29:06 already exists. Aborting save.
+2025-03-24 13:29:06,041 - INFO - Processed and saved session 2025-03-24 13:29:06 for user user123.
+2025-03-24 13:29:06,044 - ERROR - Session ID 2025-03-24 13:29:06 already exists. Aborting save.
+2025-03-24 13:29:06,046 - INFO - Processed and saved session 2025-03-24 13:29:06 for user user123.
+2025-03-24 13:29:06,074 - ERROR - Session ID 2025-03-24 13:29:06 already exists. Aborting save.
+2025-03-24 13:29:06,075 - INFO - Processed and saved session 2025-03-24 13:29:06 for user user123.
+2025-03-24 13:29:06,082 - ERROR - Session ID 2025-03-24 13:29:06 already exists. Aborting save.
+2025-03-24 13:29:06,083 - INFO - Processed and saved session 2025-03-24 13:29:06 for user user123.
+2025-03-24 13:29:06,085 - ERROR - Session ID 2025-03-24 13:29:06 already exists. Aborting save.
+2025-03-24 13:29:06,086 - INFO - Processed and saved session 2025-03-24 13:29:06 for user user123.
+2025-03-24 13:29:06,089 - ERROR - Session ID 2025-03-24 13:29:06 already exists. Aborting save.
+2025-03-24 13:29:06,090 - INFO - Processed and saved session 2025-03-24 13:29:06 for user user123.
+2025-03-24 13:29:06,126 - ERROR - Session ID 2025-03-24 13:29:06 already exists. Aborting save.
+2025-03-24 13:29:06,127 - INFO - Processed and saved session 2025-03-24 13:29:06 for user user123.
+2025-03-24 13:29:06,129 - ERROR - Session ID 2025-03-24 13:29:06 already exists. Aborting save.
+2025-03-24 13:29:06,130 - INFO - Processed and saved session 2025-03-24 13:29:06 for user user123.
+2025-03-24 13:29:06,131 - ERROR - Session ID 2025-03-24 13:29:06 already exists. Aborting save.
+2025-03-24 13:29:06,132 - INFO - Processed and saved session 2025-03-24 13:29:06 for user user123.
+2025-03-24 13:29:06,133 - ERROR - Session ID 2025-03-24 13:29:06 already exists. Aborting save.
+2025-03-24 13:29:06,134 - INFO - Processed and saved session 2025-03-24 13:29:06 for user user123.
+2025-03-24 13:29:06,171 - ERROR - Session ID 2025-03-24 13:29:06 already exists. Aborting save.
+2025-03-24 13:29:06,171 - INFO - Processed and saved session 2025-03-24 13:29:06 for user user123.
+2025-03-24 13:29:06,173 - ERROR - Session ID 2025-03-24 13:29:06 already exists. Aborting save.
+2025-03-24 13:29:06,173 - INFO - Processed and saved session 2025-03-24 13:29:06 for user user123.
+2025-03-24 13:29:06,174 - ERROR - Session ID 2025-03-24 13:29:06 already exists. Aborting save.
+2025-03-24 13:29:06,175 - INFO - Processed and saved session 2025-03-24 13:29:06 for user user123.
+2025-03-24 13:29:06,175 - ERROR - Session ID 2025-03-24 13:29:06 already exists. Aborting save.
+2025-03-24 13:29:06,176 - INFO - Processed and saved session 2025-03-24 13:29:06 for user user123.
+2025-03-24 13:29:06,220 - ERROR - Session ID 2025-03-24 13:29:06 already exists. Aborting save.
+2025-03-24 13:29:06,220 - INFO - Processed and saved session 2025-03-24 13:29:06 for user user123.
+2025-03-24 13:29:06,222 - ERROR - Session ID 2025-03-24 13:29:06 already exists. Aborting save.
+2025-03-24 13:29:06,222 - INFO - Processed and saved session 2025-03-24 13:29:06 for user user123.
+2025-03-24 13:29:06,223 - ERROR - Session ID 2025-03-24 13:29:06 already exists. Aborting save.
+2025-03-24 13:29:06,224 - INFO - Processed and saved session 2025-03-24 13:29:06 for user user123.
+2025-03-24 13:29:06,225 - ERROR - Session ID 2025-03-24 13:29:06 already exists. Aborting save.
+2025-03-24 13:29:06,225 - INFO - Processed and saved session 2025-03-24 13:29:06 for user user123.
+2025-03-24 13:29:06,269 - ERROR - Session ID 2025-03-24 13:29:06 already exists. Aborting save.
+2025-03-24 13:29:06,269 - INFO - Processed and saved session 2025-03-24 13:29:06 for user user123.
+2025-03-24 13:29:06,270 - ERROR - Session ID 2025-03-24 13:29:06 already exists. Aborting save.
+2025-03-24 13:29:06,271 - INFO - Processed and saved session 2025-03-24 13:29:06 for user user123.
+2025-03-24 13:29:06,271 - ERROR - Session ID 2025-03-24 13:29:06 already exists. Aborting save.
+2025-03-24 13:29:06,272 - INFO - Processed and saved session 2025-03-24 13:29:06 for user user123.
+2025-03-24 13:29:06,273 - ERROR - Session ID 2025-03-24 13:29:06 already exists. Aborting save.
+2025-03-24 13:29:06,273 - INFO - Processed and saved session 2025-03-24 13:29:06 for user user123.
+2025-03-24 13:29:06,317 - ERROR - Session ID 2025-03-24 13:29:06 already exists. Aborting save.
+2025-03-24 13:29:06,318 - INFO - Processed and saved session 2025-03-24 13:29:06 for user user123.
+2025-03-24 13:29:06,319 - ERROR - Session ID 2025-03-24 13:29:06 already exists. Aborting save.
+2025-03-24 13:29:06,319 - INFO - Processed and saved session 2025-03-24 13:29:06 for user user123.
+2025-03-24 13:29:06,320 - ERROR - Session ID 2025-03-24 13:29:06 already exists. Aborting save.
+2025-03-24 13:29:06,321 - INFO - Processed and saved session 2025-03-24 13:29:06 for user user123.
+2025-03-24 13:29:06,322 - ERROR - Session ID 2025-03-24 13:29:06 already exists. Aborting save.
+2025-03-24 13:29:06,322 - INFO - Processed and saved session 2025-03-24 13:29:06 for user user123.
+2025-03-24 13:29:06,366 - ERROR - Session ID 2025-03-24 13:29:06 already exists. Aborting save.
+2025-03-24 13:29:06,366 - INFO - Processed and saved session 2025-03-24 13:29:06 for user user123.
+2025-03-24 13:29:06,368 - ERROR - Session ID 2025-03-24 13:29:06 already exists. Aborting save.
+2025-03-24 13:29:06,368 - INFO - Processed and saved session 2025-03-24 13:29:06 for user user123.
+2025-03-24 13:29:07,926 - INFO - Session 2025-03-24 13:29:07 saved successfully for user user123.
+2025-03-24 13:29:07,945 - INFO - Processed and saved session 2025-03-24 13:29:07 for user user123.
+2025-03-24 13:29:07,975 - ERROR - Session ID 2025-03-24 13:29:07 already exists. Aborting save.
+2025-03-24 13:29:07,975 - INFO - Processed and saved session 2025-03-24 13:29:07 for user user123.
+2025-03-24 13:29:07,976 - ERROR - Session ID 2025-03-24 13:29:07 already exists. Aborting save.
+2025-03-24 13:29:07,977 - INFO - Processed and saved session 2025-03-24 13:29:07 for user user123.
+2025-03-24 13:29:07,978 - ERROR - Session ID 2025-03-24 13:29:07 already exists. Aborting save.
+2025-03-24 13:29:07,978 - INFO - Processed and saved session 2025-03-24 13:29:07 for user user123.
+2025-03-24 13:29:07,979 - ERROR - Session ID 2025-03-24 13:29:07 already exists. Aborting save.
+2025-03-24 13:29:07,979 - INFO - Processed and saved session 2025-03-24 13:29:07 for user user123.
+2025-03-24 13:29:08,024 - INFO - Session 2025-03-24 13:29:08 saved successfully for user user123.
+2025-03-24 13:29:08,038 - INFO - Processed and saved session 2025-03-24 13:29:08 for user user123.
+2025-03-24 13:29:08,039 - ERROR - Session ID 2025-03-24 13:29:08 already exists. Aborting save.
+2025-03-24 13:29:08,039 - INFO - Processed and saved session 2025-03-24 13:29:08 for user user123.
+2025-03-24 13:29:08,040 - ERROR - Session ID 2025-03-24 13:29:08 already exists. Aborting save.
+2025-03-24 13:29:08,041 - INFO - Processed and saved session 2025-03-24 13:29:08 for user user123.
+2025-03-24 13:29:08,042 - ERROR - Session ID 2025-03-24 13:29:08 already exists. Aborting save.
+2025-03-24 13:29:08,042 - INFO - Processed and saved session 2025-03-24 13:29:08 for user user123.
+2025-03-24 13:29:08,073 - ERROR - Session ID 2025-03-24 13:29:08 already exists. Aborting save.
+2025-03-24 13:29:08,073 - INFO - Processed and saved session 2025-03-24 13:29:08 for user user123.
+2025-03-24 13:29:08,074 - ERROR - Session ID 2025-03-24 13:29:08 already exists. Aborting save.
+2025-03-24 13:29:08,075 - INFO - Processed and saved session 2025-03-24 13:29:08 for user user123.
+2025-03-24 13:29:08,075 - ERROR - Session ID 2025-03-24 13:29:08 already exists. Aborting save.
+2025-03-24 13:29:08,076 - INFO - Processed and saved session 2025-03-24 13:29:08 for user user123.
+2025-03-24 13:29:08,077 - ERROR - Session ID 2025-03-24 13:29:08 already exists. Aborting save.
+2025-03-24 13:29:08,078 - INFO - Processed and saved session 2025-03-24 13:29:08 for user user123.
+2025-03-24 13:29:08,121 - ERROR - Session ID 2025-03-24 13:29:08 already exists. Aborting save.
+2025-03-24 13:29:08,122 - INFO - Processed and saved session 2025-03-24 13:29:08 for user user123.
+2025-03-24 13:29:08,123 - ERROR - Session ID 2025-03-24 13:29:08 already exists. Aborting save.
+2025-03-24 13:29:08,123 - INFO - Processed and saved session 2025-03-24 13:29:08 for user user123.
+2025-03-24 13:29:08,125 - ERROR - Session ID 2025-03-24 13:29:08 already exists. Aborting save.
+2025-03-24 13:29:08,125 - INFO - Processed and saved session 2025-03-24 13:29:08 for user user123.
+2025-03-24 13:29:08,126 - ERROR - Session ID 2025-03-24 13:29:08 already exists. Aborting save.
+2025-03-24 13:29:08,126 - INFO - Processed and saved session 2025-03-24 13:29:08 for user user123.
+2025-03-24 13:29:08,170 - ERROR - Session ID 2025-03-24 13:29:08 already exists. Aborting save.
+2025-03-24 13:29:08,170 - INFO - Processed and saved session 2025-03-24 13:29:08 for user user123.
+2025-03-24 13:29:08,172 - ERROR - Session ID 2025-03-24 13:29:08 already exists. Aborting save.
+2025-03-24 13:29:08,172 - INFO - Processed and saved session 2025-03-24 13:29:08 for user user123.
+2025-03-24 13:29:08,173 - ERROR - Session ID 2025-03-24 13:29:08 already exists. Aborting save.
+2025-03-24 13:29:08,174 - INFO - Processed and saved session 2025-03-24 13:29:08 for user user123.
+2025-03-24 13:29:08,175 - ERROR - Session ID 2025-03-24 13:29:08 already exists. Aborting save.
+2025-03-24 13:29:08,175 - INFO - Processed and saved session 2025-03-24 13:29:08 for user user123.
+2025-03-24 13:29:08,219 - ERROR - Session ID 2025-03-24 13:29:08 already exists. Aborting save.
+2025-03-24 13:29:08,219 - INFO - Processed and saved session 2025-03-24 13:29:08 for user user123.
+2025-03-24 13:29:08,220 - ERROR - Session ID 2025-03-24 13:29:08 already exists. Aborting save.
+2025-03-24 13:29:08,221 - INFO - Processed and saved session 2025-03-24 13:29:08 for user user123.
+2025-03-24 13:29:08,222 - ERROR - Session ID 2025-03-24 13:29:08 already exists. Aborting save.
+2025-03-24 13:29:08,222 - INFO - Processed and saved session 2025-03-24 13:29:08 for user user123.
+2025-03-24 13:29:08,223 - ERROR - Session ID 2025-03-24 13:29:08 already exists. Aborting save.
+2025-03-24 13:29:08,224 - INFO - Processed and saved session 2025-03-24 13:29:08 for user user123.
+2025-03-24 13:29:08,267 - ERROR - Session ID 2025-03-24 13:29:08 already exists. Aborting save.
+2025-03-24 13:29:08,268 - INFO - Processed and saved session 2025-03-24 13:29:08 for user user123.
+2025-03-24 13:29:08,269 - ERROR - Session ID 2025-03-24 13:29:08 already exists. Aborting save.
+2025-03-24 13:29:08,270 - INFO - Processed and saved session 2025-03-24 13:29:08 for user user123.
+2025-03-24 13:29:08,270 - ERROR - Session ID 2025-03-24 13:29:08 already exists. Aborting save.
+2025-03-24 13:29:08,271 - INFO - Processed and saved session 2025-03-24 13:29:08 for user user123.
+2025-03-24 13:29:08,272 - ERROR - Session ID 2025-03-24 13:29:08 already exists. Aborting save.
+2025-03-24 13:29:08,272 - INFO - Processed and saved session 2025-03-24 13:29:08 for user user123.
+2025-03-24 13:29:08,316 - ERROR - Session ID 2025-03-24 13:29:08 already exists. Aborting save.
+2025-03-24 13:29:08,316 - INFO - Processed and saved session 2025-03-24 13:29:08 for user user123.
+2025-03-24 13:29:08,317 - ERROR - Session ID 2025-03-24 13:29:08 already exists. Aborting save.
+2025-03-24 13:29:08,318 - INFO - Processed and saved session 2025-03-24 13:29:08 for user user123.
+2025-03-24 13:29:08,365 - ERROR - Session ID 2025-03-24 13:29:08 already exists. Aborting save.
+2025-03-24 13:29:08,365 - INFO - Processed and saved session 2025-03-24 13:29:08 for user user123.
+2025-03-24 13:29:08,367 - ERROR - Session ID 2025-03-24 13:29:08 already exists. Aborting save.
+2025-03-24 13:29:08,367 - INFO - Processed and saved session 2025-03-24 13:29:08 for user user123.
+2025-03-24 13:29:08,368 - ERROR - Session ID 2025-03-24 13:29:08 already exists. Aborting save.
+2025-03-24 13:29:08,369 - INFO - Processed and saved session 2025-03-24 13:29:08 for user user123.
+2025-03-24 13:29:08,370 - ERROR - Session ID 2025-03-24 13:29:08 already exists. Aborting save.
+2025-03-24 13:29:08,370 - INFO - Processed and saved session 2025-03-24 13:29:08 for user user123.
+2025-03-24 13:29:13,582 - INFO - Session 2025-03-24 13:29:13 saved successfully for user user123.
+2025-03-24 13:29:13,601 - INFO - Processed and saved session 2025-03-24 13:29:13 for user user123.
+2025-03-24 13:29:13,602 - ERROR - Session ID 2025-03-24 13:29:13 already exists. Aborting save.
+2025-03-24 13:29:13,603 - INFO - Processed and saved session 2025-03-24 13:29:13 for user user123.
+2025-03-24 13:29:13,605 - ERROR - Session ID 2025-03-24 13:29:13 already exists. Aborting save.
+2025-03-24 13:29:13,606 - INFO - Processed and saved session 2025-03-24 13:29:13 for user user123.
+2025-03-24 13:29:13,607 - ERROR - Session ID 2025-03-24 13:29:13 already exists. Aborting save.
+2025-03-24 13:29:13,608 - INFO - Processed and saved session 2025-03-24 13:29:13 for user user123.
+2025-03-24 13:29:13,633 - ERROR - Session ID 2025-03-24 13:29:13 already exists. Aborting save.
+2025-03-24 13:29:13,634 - INFO - Processed and saved session 2025-03-24 13:29:13 for user user123.
+2025-03-24 13:29:13,635 - ERROR - Session ID 2025-03-24 13:29:13 already exists. Aborting save.
+2025-03-24 13:29:13,636 - INFO - Processed and saved session 2025-03-24 13:29:13 for user user123.
+2025-03-24 13:29:13,638 - ERROR - Session ID 2025-03-24 13:29:13 already exists. Aborting save.
+2025-03-24 13:29:13,638 - INFO - Processed and saved session 2025-03-24 13:29:13 for user user123.
+2025-03-24 13:29:13,639 - ERROR - Session ID 2025-03-24 13:29:13 already exists. Aborting save.
+2025-03-24 13:29:13,640 - INFO - Processed and saved session 2025-03-24 13:29:13 for user user123.
+2025-03-24 13:29:13,680 - ERROR - Session ID 2025-03-24 13:29:13 already exists. Aborting save.
+2025-03-24 13:29:13,681 - INFO - Processed and saved session 2025-03-24 13:29:13 for user user123.
+2025-03-24 13:29:13,682 - ERROR - Session ID 2025-03-24 13:29:13 already exists. Aborting save.
+2025-03-24 13:29:13,683 - INFO - Processed and saved session 2025-03-24 13:29:13 for user user123.
+2025-03-24 13:29:13,684 - ERROR - Session ID 2025-03-24 13:29:13 already exists. Aborting save.
+2025-03-24 13:29:13,686 - INFO - Processed and saved session 2025-03-24 13:29:13 for user user123.
+2025-03-24 13:29:13,689 - ERROR - Session ID 2025-03-24 13:29:13 already exists. Aborting save.
+2025-03-24 13:29:13,690 - INFO - Processed and saved session 2025-03-24 13:29:13 for user user123.
+2025-03-24 13:29:13,728 - ERROR - Session ID 2025-03-24 13:29:13 already exists. Aborting save.
+2025-03-24 13:29:13,729 - INFO - Processed and saved session 2025-03-24 13:29:13 for user user123.
+2025-03-24 13:29:13,730 - ERROR - Session ID 2025-03-24 13:29:13 already exists. Aborting save.
+2025-03-24 13:29:13,731 - INFO - Processed and saved session 2025-03-24 13:29:13 for user user123.
+2025-03-24 13:29:13,732 - ERROR - Session ID 2025-03-24 13:29:13 already exists. Aborting save.
+2025-03-24 13:29:13,733 - INFO - Processed and saved session 2025-03-24 13:29:13 for user user123.
+2025-03-24 13:29:13,734 - ERROR - Session ID 2025-03-24 13:29:13 already exists. Aborting save.
+2025-03-24 13:29:13,734 - INFO - Processed and saved session 2025-03-24 13:29:13 for user user123.
+2025-03-24 13:29:13,874 - ERROR - Session ID 2025-03-24 13:29:13 already exists. Aborting save.
+2025-03-24 13:29:13,875 - INFO - Processed and saved session 2025-03-24 13:29:13 for user user123.
+2025-03-24 13:29:13,877 - ERROR - Session ID 2025-03-24 13:29:13 already exists. Aborting save.
+2025-03-24 13:29:13,877 - INFO - Processed and saved session 2025-03-24 13:29:13 for user user123.
+2025-03-24 13:29:13,878 - ERROR - Session ID 2025-03-24 13:29:13 already exists. Aborting save.
+2025-03-24 13:29:13,879 - INFO - Processed and saved session 2025-03-24 13:29:13 for user user123.
+2025-03-24 13:29:13,879 - ERROR - Session ID 2025-03-24 13:29:13 already exists. Aborting save.
+2025-03-24 13:29:13,880 - INFO - Processed and saved session 2025-03-24 13:29:13 for user user123.
+2025-03-24 13:29:13,923 - ERROR - Session ID 2025-03-24 13:29:13 already exists. Aborting save.
+2025-03-24 13:29:13,924 - INFO - Processed and saved session 2025-03-24 13:29:13 for user user123.
+2025-03-24 13:29:13,926 - ERROR - Session ID 2025-03-24 13:29:13 already exists. Aborting save.
+2025-03-24 13:29:13,927 - INFO - Processed and saved session 2025-03-24 13:29:13 for user user123.
+2025-03-24 13:29:13,929 - ERROR - Session ID 2025-03-24 13:29:13 already exists. Aborting save.
+2025-03-24 13:29:13,929 - INFO - Processed and saved session 2025-03-24 13:29:13 for user user123.
+2025-03-24 13:29:13,931 - ERROR - Session ID 2025-03-24 13:29:13 already exists. Aborting save.
+2025-03-24 13:29:13,932 - INFO - Processed and saved session 2025-03-24 13:29:13 for user user123.
+2025-03-24 13:29:13,976 - ERROR - Session ID 2025-03-24 13:29:13 already exists. Aborting save.
+2025-03-24 13:29:13,978 - INFO - Processed and saved session 2025-03-24 13:29:13 for user user123.
+2025-03-24 13:29:13,981 - ERROR - Session ID 2025-03-24 13:29:13 already exists. Aborting save.
+2025-03-24 13:29:13,982 - INFO - Processed and saved session 2025-03-24 13:29:13 for user user123.
+2025-03-24 13:29:13,984 - ERROR - Session ID 2025-03-24 13:29:13 already exists. Aborting save.
+2025-03-24 13:29:13,985 - INFO - Processed and saved session 2025-03-24 13:29:13 for user user123.
+2025-03-24 13:29:13,988 - ERROR - Session ID 2025-03-24 13:29:13 already exists. Aborting save.
+2025-03-24 13:29:13,989 - INFO - Processed and saved session 2025-03-24 13:29:13 for user user123.
+2025-03-24 13:29:14,020 - INFO - Session 2025-03-24 13:29:14 saved successfully for user user123.
+2025-03-24 13:29:14,035 - INFO - Processed and saved session 2025-03-24 13:29:14 for user user123.
+2025-03-24 13:29:14,038 - ERROR - Session ID 2025-03-24 13:29:14 already exists. Aborting save.
+2025-03-24 13:29:14,039 - INFO - Processed and saved session 2025-03-24 13:29:14 for user user123.
+2025-03-24 13:29:14,042 - ERROR - Session ID 2025-03-24 13:29:14 already exists. Aborting save.
+2025-03-24 13:29:14,043 - INFO - Processed and saved session 2025-03-24 13:29:14 for user user123.
+2025-03-24 13:29:14,044 - ERROR - Session ID 2025-03-24 13:29:14 already exists. Aborting save.
+2025-03-24 13:29:14,045 - INFO - Processed and saved session 2025-03-24 13:29:14 for user user123.
+2025-03-24 13:29:14,070 - ERROR - Session ID 2025-03-24 13:29:14 already exists. Aborting save.
+2025-03-24 13:29:14,072 - INFO - Processed and saved session 2025-03-24 13:29:14 for user user123.
+2025-03-24 13:29:14,074 - ERROR - Session ID 2025-03-24 13:29:14 already exists. Aborting save.
+2025-03-24 13:29:14,075 - INFO - Processed and saved session 2025-03-24 13:29:14 for user user123.
+2025-03-24 13:29:14,076 - ERROR - Session ID 2025-03-24 13:29:14 already exists. Aborting save.
+2025-03-24 13:29:14,077 - INFO - Processed and saved session 2025-03-24 13:29:14 for user user123.
+2025-03-24 13:29:14,079 - ERROR - Session ID 2025-03-24 13:29:14 already exists. Aborting save.
+2025-03-24 13:29:14,079 - INFO - Processed and saved session 2025-03-24 13:29:14 for user user123.
+2025-03-24 13:29:14,118 - ERROR - Session ID 2025-03-24 13:29:14 already exists. Aborting save.
+2025-03-24 13:29:14,119 - INFO - Processed and saved session 2025-03-24 13:29:14 for user user123.
+2025-03-24 13:29:14,120 - ERROR - Session ID 2025-03-24 13:29:14 already exists. Aborting save.
+2025-03-24 13:29:14,120 - INFO - Processed and saved session 2025-03-24 13:29:14 for user user123.
+2025-03-24 11:29:24,688 - INFO - 10.100.46.99 - - [24/Mar/2025 11:29:24] "GET /home HTTP/1.1" 200 -
+2025-03-24 13:30:37,837 - INFO - Session 2025-03-24 13:30:37 saved successfully for user user123.
+2025-03-24 13:30:37,855 - INFO - Processed and saved session 2025-03-24 13:30:37 for user user123.
+2025-03-24 13:30:37,857 - ERROR - Session ID 2025-03-24 13:30:37 already exists. Aborting save.
+2025-03-24 13:30:37,858 - INFO - Processed and saved session 2025-03-24 13:30:37 for user user123.
+2025-03-24 13:30:37,886 - ERROR - Session ID 2025-03-24 13:30:37 already exists. Aborting save.
+2025-03-24 13:30:37,887 - INFO - Processed and saved session 2025-03-24 13:30:37 for user user123.
+2025-03-24 13:30:37,889 - ERROR - Session ID 2025-03-24 13:30:37 already exists. Aborting save.
+2025-03-24 13:30:37,890 - INFO - Processed and saved session 2025-03-24 13:30:37 for user user123.
+2025-03-24 13:30:37,892 - ERROR - Session ID 2025-03-24 13:30:37 already exists. Aborting save.
+2025-03-24 13:30:37,892 - INFO - Processed and saved session 2025-03-24 13:30:37 for user user123.
+2025-03-24 13:30:37,894 - ERROR - Session ID 2025-03-24 13:30:37 already exists. Aborting save.
+2025-03-24 13:30:37,895 - INFO - Processed and saved session 2025-03-24 13:30:37 for user user123.
+2025-03-24 13:30:37,934 - ERROR - Session ID 2025-03-24 13:30:37 already exists. Aborting save.
+2025-03-24 13:30:37,935 - INFO - Processed and saved session 2025-03-24 13:30:37 for user user123.
+2025-03-24 13:30:37,937 - ERROR - Session ID 2025-03-24 13:30:37 already exists. Aborting save.
+2025-03-24 13:30:37,937 - INFO - Processed and saved session 2025-03-24 13:30:37 for user user123.
+2025-03-24 13:30:37,938 - ERROR - Session ID 2025-03-24 13:30:37 already exists. Aborting save.
+2025-03-24 13:30:37,938 - INFO - Processed and saved session 2025-03-24 13:30:37 for user user123.
+2025-03-24 13:30:37,939 - ERROR - Session ID 2025-03-24 13:30:37 already exists. Aborting save.
+2025-03-24 13:30:37,939 - INFO - Processed and saved session 2025-03-24 13:30:37 for user user123.
+2025-03-24 13:30:37,981 - ERROR - Session ID 2025-03-24 13:30:37 already exists. Aborting save.
+2025-03-24 13:30:37,982 - INFO - Processed and saved session 2025-03-24 13:30:37 for user user123.
+2025-03-24 13:30:37,983 - ERROR - Session ID 2025-03-24 13:30:37 already exists. Aborting save.
+2025-03-24 13:30:37,983 - INFO - Processed and saved session 2025-03-24 13:30:37 for user user123.
+2025-03-24 13:30:37,984 - ERROR - Session ID 2025-03-24 13:30:37 already exists. Aborting save.
+2025-03-24 13:30:37,985 - INFO - Processed and saved session 2025-03-24 13:30:37 for user user123.
+2025-03-24 13:30:37,986 - ERROR - Session ID 2025-03-24 13:30:37 already exists. Aborting save.
+2025-03-24 13:30:37,987 - INFO - Processed and saved session 2025-03-24 13:30:37 for user user123.
+2025-03-24 13:30:38,030 - INFO - Session 2025-03-24 13:30:38 saved successfully for user user123.
+2025-03-24 13:30:38,051 - INFO - Processed and saved session 2025-03-24 13:30:38 for user user123.
+2025-03-24 13:30:38,053 - ERROR - Session ID 2025-03-24 13:30:38 already exists. Aborting save.
+2025-03-24 13:30:38,053 - INFO - Processed and saved session 2025-03-24 13:30:38 for user user123.
+2025-03-24 13:30:38,054 - ERROR - Session ID 2025-03-24 13:30:38 already exists. Aborting save.
+2025-03-24 13:30:38,054 - INFO - Processed and saved session 2025-03-24 13:30:38 for user user123.
+2025-03-24 13:30:38,055 - ERROR - Session ID 2025-03-24 13:30:38 already exists. Aborting save.
+2025-03-24 13:30:38,055 - INFO - Processed and saved session 2025-03-24 13:30:38 for user user123.
+2025-03-24 13:30:38,079 - ERROR - Session ID 2025-03-24 13:30:38 already exists. Aborting save.
+2025-03-24 13:30:38,079 - INFO - Processed and saved session 2025-03-24 13:30:38 for user user123.
+2025-03-24 13:30:38,081 - ERROR - Session ID 2025-03-24 13:30:38 already exists. Aborting save.
+2025-03-24 13:30:38,081 - INFO - Processed and saved session 2025-03-24 13:30:38 for user user123.
+2025-03-24 13:30:38,083 - ERROR - Session ID 2025-03-24 13:30:38 already exists. Aborting save.
+2025-03-24 13:30:38,084 - INFO - Processed and saved session 2025-03-24 13:30:38 for user user123.
+2025-03-24 13:30:38,085 - ERROR - Session ID 2025-03-24 13:30:38 already exists. Aborting save.
+2025-03-24 13:30:38,086 - INFO - Processed and saved session 2025-03-24 13:30:38 for user user123.
+2025-03-24 13:30:38,127 - ERROR - Session ID 2025-03-24 13:30:38 already exists. Aborting save.
+2025-03-24 13:30:38,128 - INFO - Processed and saved session 2025-03-24 13:30:38 for user user123.
+2025-03-24 13:30:38,129 - ERROR - Session ID 2025-03-24 13:30:38 already exists. Aborting save.
+2025-03-24 13:30:38,129 - INFO - Processed and saved session 2025-03-24 13:30:38 for user user123.
+2025-03-24 13:30:38,130 - ERROR - Session ID 2025-03-24 13:30:38 already exists. Aborting save.
+2025-03-24 13:30:38,130 - INFO - Processed and saved session 2025-03-24 13:30:38 for user user123.
+2025-03-24 13:30:38,131 - ERROR - Session ID 2025-03-24 13:30:38 already exists. Aborting save.
+2025-03-24 13:30:38,131 - INFO - Processed and saved session 2025-03-24 13:30:38 for user user123.
+2025-03-24 13:30:38,176 - ERROR - Session ID 2025-03-24 13:30:38 already exists. Aborting save.
+2025-03-24 13:30:38,177 - INFO - Processed and saved session 2025-03-24 13:30:38 for user user123.
+2025-03-24 13:30:38,178 - ERROR - Session ID 2025-03-24 13:30:38 already exists. Aborting save.
+2025-03-24 13:30:38,178 - INFO - Processed and saved session 2025-03-24 13:30:38 for user user123.
+2025-03-24 13:30:38,180 - ERROR - Session ID 2025-03-24 13:30:38 already exists. Aborting save.
+2025-03-24 13:30:38,180 - INFO - Processed and saved session 2025-03-24 13:30:38 for user user123.
+2025-03-24 13:30:38,181 - ERROR - Session ID 2025-03-24 13:30:38 already exists. Aborting save.
+2025-03-24 13:30:38,182 - INFO - Processed and saved session 2025-03-24 13:30:38 for user user123.
+2025-03-24 13:30:38,273 - ERROR - Session ID 2025-03-24 13:30:38 already exists. Aborting save.
+2025-03-24 13:30:38,274 - INFO - Processed and saved session 2025-03-24 13:30:38 for user user123.
+2025-03-24 13:30:38,275 - ERROR - Session ID 2025-03-24 13:30:38 already exists. Aborting save.
+2025-03-24 13:30:38,275 - INFO - Processed and saved session 2025-03-24 13:30:38 for user user123.
+2025-03-24 13:30:38,277 - ERROR - Session ID 2025-03-24 13:30:38 already exists. Aborting save.
+2025-03-24 13:30:38,277 - INFO - Processed and saved session 2025-03-24 13:30:38 for user user123.
+2025-03-24 13:30:38,278 - ERROR - Session ID 2025-03-24 13:30:38 already exists. Aborting save.
+2025-03-24 13:30:38,278 - INFO - Processed and saved session 2025-03-24 13:30:38 for user user123.
+2025-03-24 13:30:38,322 - ERROR - Session ID 2025-03-24 13:30:38 already exists. Aborting save.
+2025-03-24 13:30:38,323 - INFO - Processed and saved session 2025-03-24 13:30:38 for user user123.
+2025-03-24 13:30:38,324 - ERROR - Session ID 2025-03-24 13:30:38 already exists. Aborting save.
+2025-03-24 13:30:38,324 - INFO - Processed and saved session 2025-03-24 13:30:38 for user user123.
+2025-03-24 13:30:38,325 - ERROR - Session ID 2025-03-24 13:30:38 already exists. Aborting save.
+2025-03-24 13:30:38,326 - INFO - Processed and saved session 2025-03-24 13:30:38 for user user123.
+2025-03-24 13:30:38,326 - ERROR - Session ID 2025-03-24 13:30:38 already exists. Aborting save.
+2025-03-24 13:30:38,327 - INFO - Processed and saved session 2025-03-24 13:30:38 for user user123.
+2025-03-24 13:30:38,371 - ERROR - Session ID 2025-03-24 13:30:38 already exists. Aborting save.
+2025-03-24 13:30:38,371 - INFO - Processed and saved session 2025-03-24 13:30:38 for user user123.
+2025-03-24 13:30:38,373 - ERROR - Session ID 2025-03-24 13:30:38 already exists. Aborting save.
+2025-03-24 13:30:38,373 - INFO - Processed and saved session 2025-03-24 13:30:38 for user user123.
+2025-03-24 13:30:38,374 - ERROR - Session ID 2025-03-24 13:30:38 already exists. Aborting save.
+2025-03-24 13:30:38,374 - INFO - Processed and saved session 2025-03-24 13:30:38 for user user123.
+2025-03-24 13:30:38,375 - ERROR - Session ID 2025-03-24 13:30:38 already exists. Aborting save.
+2025-03-24 13:30:38,375 - INFO - Processed and saved session 2025-03-24 13:30:38 for user user123.
+2025-03-24 13:30:38,420 - ERROR - Session ID 2025-03-24 13:30:38 already exists. Aborting save.
+2025-03-24 13:30:38,420 - INFO - Processed and saved session 2025-03-24 13:30:38 for user user123.
+2025-03-24 13:30:38,421 - ERROR - Session ID 2025-03-24 13:30:38 already exists. Aborting save.
+2025-03-24 13:30:38,422 - INFO - Processed and saved session 2025-03-24 13:30:38 for user user123.
+2025-03-24 13:30:38,423 - ERROR - Session ID 2025-03-24 13:30:38 already exists. Aborting save.
+2025-03-24 13:30:38,423 - INFO - Processed and saved session 2025-03-24 13:30:38 for user user123.
+2025-03-24 13:30:38,423 - ERROR - Session ID 2025-03-24 13:30:38 already exists. Aborting save.
+2025-03-24 13:30:38,424 - INFO - Processed and saved session 2025-03-24 13:30:38 for user user123.
+2025-03-24 13:30:38,469 - ERROR - Session ID 2025-03-24 13:30:38 already exists. Aborting save.
+2025-03-24 13:30:38,469 - INFO - Processed and saved session 2025-03-24 13:30:38 for user user123.
+2025-03-24 13:30:38,470 - ERROR - Session ID 2025-03-24 13:30:38 already exists. Aborting save.
+2025-03-24 13:30:38,471 - INFO - Processed and saved session 2025-03-24 13:30:38 for user user123.
+2025-03-24 13:30:40,127 - INFO - Session 2025-03-24 13:30:40 saved successfully for user user123.
+2025-03-24 13:30:40,141 - INFO - Processed and saved session 2025-03-24 13:30:40 for user user123.
+2025-03-24 13:30:40,142 - ERROR - Session ID 2025-03-24 13:30:40 already exists. Aborting save.
+2025-03-24 13:30:40,142 - INFO - Processed and saved session 2025-03-24 13:30:40 for user user123.
+2025-03-24 13:30:40,143 - ERROR - Session ID 2025-03-24 13:30:40 already exists. Aborting save.
+2025-03-24 13:30:40,143 - INFO - Processed and saved session 2025-03-24 13:30:40 for user user123.
+2025-03-24 13:30:40,144 - ERROR - Session ID 2025-03-24 13:30:40 already exists. Aborting save.
+2025-03-24 13:30:40,145 - INFO - Processed and saved session 2025-03-24 13:30:40 for user user123.
+2025-03-24 13:30:40,225 - ERROR - Session ID 2025-03-24 13:30:40 already exists. Aborting save.
+2025-03-24 13:30:40,226 - INFO - Processed and saved session 2025-03-24 13:30:40 for user user123.
+2025-03-24 13:30:40,228 - ERROR - Session ID 2025-03-24 13:30:40 already exists. Aborting save.
+2025-03-24 13:30:40,228 - INFO - Processed and saved session 2025-03-24 13:30:40 for user user123.
+2025-03-24 13:30:40,230 - ERROR - Session ID 2025-03-24 13:30:40 already exists. Aborting save.
+2025-03-24 13:30:40,231 - INFO - Processed and saved session 2025-03-24 13:30:40 for user user123.
+2025-03-24 13:30:40,232 - ERROR - Session ID 2025-03-24 13:30:40 already exists. Aborting save.
+2025-03-24 13:30:40,232 - INFO - Processed and saved session 2025-03-24 13:30:40 for user user123.
+2025-03-24 13:30:40,273 - ERROR - Session ID 2025-03-24 13:30:40 already exists. Aborting save.
+2025-03-24 13:30:40,273 - INFO - Processed and saved session 2025-03-24 13:30:40 for user user123.
+2025-03-24 13:30:40,275 - ERROR - Session ID 2025-03-24 13:30:40 already exists. Aborting save.
+2025-03-24 13:30:40,275 - INFO - Processed and saved session 2025-03-24 13:30:40 for user user123.
+2025-03-24 13:30:40,277 - ERROR - Session ID 2025-03-24 13:30:40 already exists. Aborting save.
+2025-03-24 13:30:40,277 - INFO - Processed and saved session 2025-03-24 13:30:40 for user user123.
+2025-03-24 13:30:40,278 - ERROR - Session ID 2025-03-24 13:30:40 already exists. Aborting save.
+2025-03-24 13:30:40,279 - INFO - Processed and saved session 2025-03-24 13:30:40 for user user123.
+2025-03-24 13:30:40,321 - ERROR - Session ID 2025-03-24 13:30:40 already exists. Aborting save.
+2025-03-24 13:30:40,322 - INFO - Processed and saved session 2025-03-24 13:30:40 for user user123.
+2025-03-24 13:30:40,323 - ERROR - Session ID 2025-03-24 13:30:40 already exists. Aborting save.
+2025-03-24 13:30:40,323 - INFO - Processed and saved session 2025-03-24 13:30:40 for user user123.
+2025-03-24 13:30:40,324 - ERROR - Session ID 2025-03-24 13:30:40 already exists. Aborting save.
+2025-03-24 13:30:40,325 - INFO - Processed and saved session 2025-03-24 13:30:40 for user user123.
+2025-03-24 13:30:40,326 - ERROR - Session ID 2025-03-24 13:30:40 already exists. Aborting save.
+2025-03-24 13:30:40,326 - INFO - Processed and saved session 2025-03-24 13:30:40 for user user123.
+2025-03-24 13:30:40,370 - ERROR - Session ID 2025-03-24 13:30:40 already exists. Aborting save.
+2025-03-24 13:30:40,370 - INFO - Processed and saved session 2025-03-24 13:30:40 for user user123.
+2025-03-24 13:30:40,371 - ERROR - Session ID 2025-03-24 13:30:40 already exists. Aborting save.
+2025-03-24 13:30:40,372 - INFO - Processed and saved session 2025-03-24 13:30:40 for user user123.
+2025-03-24 13:30:40,373 - ERROR - Session ID 2025-03-24 13:30:40 already exists. Aborting save.
+2025-03-24 13:30:40,373 - INFO - Processed and saved session 2025-03-24 13:30:40 for user user123.
+2025-03-24 13:30:40,374 - ERROR - Session ID 2025-03-24 13:30:40 already exists. Aborting save.
+2025-03-24 13:30:40,375 - INFO - Processed and saved session 2025-03-24 13:30:40 for user user123.
+2025-03-24 13:30:40,428 - ERROR - Session ID 2025-03-24 13:30:40 already exists. Aborting save.
+2025-03-24 13:30:40,429 - INFO - Processed and saved session 2025-03-24 13:30:40 for user user123.
+2025-03-24 13:30:40,431 - ERROR - Session ID 2025-03-24 13:30:40 already exists. Aborting save.
+2025-03-24 13:30:40,432 - INFO - Processed and saved session 2025-03-24 13:30:40 for user user123.
+2025-03-24 13:30:40,437 - ERROR - Session ID 2025-03-24 13:30:40 already exists. Aborting save.
+2025-03-24 13:30:40,439 - INFO - Processed and saved session 2025-03-24 13:30:40 for user user123.
+2025-03-24 13:30:40,446 - ERROR - Session ID 2025-03-24 13:30:40 already exists. Aborting save.
+2025-03-24 13:30:40,446 - INFO - Processed and saved session 2025-03-24 13:30:40 for user user123.
+2025-03-24 13:30:40,468 - ERROR - Session ID 2025-03-24 13:30:40 already exists. Aborting save.
+2025-03-24 13:30:40,469 - INFO - Processed and saved session 2025-03-24 13:30:40 for user user123.
+2025-03-24 13:30:40,473 - ERROR - Session ID 2025-03-24 13:30:40 already exists. Aborting save.
+2025-03-24 13:30:40,474 - INFO - Processed and saved session 2025-03-24 13:30:40 for user user123.
+2025-03-24 13:30:40,476 - ERROR - Session ID 2025-03-24 13:30:40 already exists. Aborting save.
+2025-03-24 13:30:40,477 - INFO - Processed and saved session 2025-03-24 13:30:40 for user user123.
+2025-03-24 13:30:40,481 - ERROR - Session ID 2025-03-24 13:30:40 already exists. Aborting save.
+2025-03-24 13:30:40,483 - INFO - Processed and saved session 2025-03-24 13:30:40 for user user123.
+2025-03-24 13:30:40,516 - ERROR - Session ID 2025-03-24 13:30:40 already exists. Aborting save.
+2025-03-24 13:30:40,517 - INFO - Processed and saved session 2025-03-24 13:30:40 for user user123.
+2025-03-24 13:30:40,518 - ERROR - Session ID 2025-03-24 13:30:40 already exists. Aborting save.
+2025-03-24 13:30:40,518 - INFO - Processed and saved session 2025-03-24 13:30:40 for user user123.
+2025-03-24 13:30:40,519 - ERROR - Session ID 2025-03-24 13:30:40 already exists. Aborting save.
+2025-03-24 13:30:40,519 - INFO - Processed and saved session 2025-03-24 13:30:40 for user user123.
+2025-03-24 13:30:40,522 - ERROR - Session ID 2025-03-24 13:30:40 already exists. Aborting save.
+2025-03-24 13:30:40,522 - INFO - Processed and saved session 2025-03-24 13:30:40 for user user123.
+2025-03-24 13:30:40,565 - ERROR - Session ID 2025-03-24 13:30:40 already exists. Aborting save.
+2025-03-24 13:30:40,566 - INFO - Processed and saved session 2025-03-24 13:30:40 for user user123.
+2025-03-24 13:30:40,566 - ERROR - Session ID 2025-03-24 13:30:40 already exists. Aborting save.
+2025-03-24 13:30:40,567 - INFO - Processed and saved session 2025-03-24 13:30:40 for user user123.
+2025-03-24 13:30:40,567 - ERROR - Session ID 2025-03-24 13:30:40 already exists. Aborting save.
+2025-03-24 13:30:40,568 - INFO - Processed and saved session 2025-03-24 13:30:40 for user user123.
+2025-03-24 13:30:42,369 - INFO - Session 2025-03-24 13:30:42 saved successfully for user user123.
+2025-03-24 13:30:42,384 - INFO - Processed and saved session 2025-03-24 13:30:42 for user user123.
+2025-03-24 13:30:42,386 - ERROR - Session ID 2025-03-24 13:30:42 already exists. Aborting save.
+2025-03-24 13:30:42,386 - INFO - Processed and saved session 2025-03-24 13:30:42 for user user123.
+2025-03-24 13:30:42,387 - ERROR - Session ID 2025-03-24 13:30:42 already exists. Aborting save.
+2025-03-24 13:30:42,387 - INFO - Processed and saved session 2025-03-24 13:30:42 for user user123.
+2025-03-24 13:30:42,388 - ERROR - Session ID 2025-03-24 13:30:42 already exists. Aborting save.
+2025-03-24 13:30:42,388 - INFO - Processed and saved session 2025-03-24 13:30:42 for user user123.
+2025-03-24 13:30:42,417 - ERROR - Session ID 2025-03-24 13:30:42 already exists. Aborting save.
+2025-03-24 13:30:42,418 - INFO - Processed and saved session 2025-03-24 13:30:42 for user user123.
+2025-03-24 13:30:42,419 - ERROR - Session ID 2025-03-24 13:30:42 already exists. Aborting save.
+2025-03-24 13:30:42,420 - INFO - Processed and saved session 2025-03-24 13:30:42 for user user123.
+2025-03-24 13:30:42,421 - ERROR - Session ID 2025-03-24 13:30:42 already exists. Aborting save.
+2025-03-24 13:30:42,421 - INFO - Processed and saved session 2025-03-24 13:30:42 for user user123.
+2025-03-24 13:30:42,425 - ERROR - Session ID 2025-03-24 13:30:42 already exists. Aborting save.
+2025-03-24 13:30:42,425 - INFO - Processed and saved session 2025-03-24 13:30:42 for user user123.
+2025-03-24 13:30:42,466 - ERROR - Session ID 2025-03-24 13:30:42 already exists. Aborting save.
+2025-03-24 13:30:42,466 - INFO - Processed and saved session 2025-03-24 13:30:42 for user user123.
+2025-03-24 13:30:42,467 - ERROR - Session ID 2025-03-24 13:30:42 already exists. Aborting save.
+2025-03-24 13:30:42,468 - INFO - Processed and saved session 2025-03-24 13:30:42 for user user123.
+2025-03-24 13:30:42,469 - ERROR - Session ID 2025-03-24 13:30:42 already exists. Aborting save.
+2025-03-24 13:30:42,469 - INFO - Processed and saved session 2025-03-24 13:30:42 for user user123.
+2025-03-24 13:30:42,471 - ERROR - Session ID 2025-03-24 13:30:42 already exists. Aborting save.
+2025-03-24 13:30:42,471 - INFO - Processed and saved session 2025-03-24 13:30:42 for user user123.
+2025-03-24 13:30:42,515 - ERROR - Session ID 2025-03-24 13:30:42 already exists. Aborting save.
+2025-03-24 13:30:42,515 - INFO - Processed and saved session 2025-03-24 13:30:42 for user user123.
+2025-03-24 13:30:42,518 - ERROR - Session ID 2025-03-24 13:30:42 already exists. Aborting save.
+2025-03-24 13:30:42,519 - INFO - Processed and saved session 2025-03-24 13:30:42 for user user123.
+2025-03-24 13:30:42,519 - ERROR - Session ID 2025-03-24 13:30:42 already exists. Aborting save.
+2025-03-24 13:30:42,520 - INFO - Processed and saved session 2025-03-24 13:30:42 for user user123.
+2025-03-24 13:30:42,521 - ERROR - Session ID 2025-03-24 13:30:42 already exists. Aborting save.
+2025-03-24 13:30:42,521 - INFO - Processed and saved session 2025-03-24 13:30:42 for user user123.
+2025-03-24 13:30:42,564 - ERROR - Session ID 2025-03-24 13:30:42 already exists. Aborting save.
+2025-03-24 13:30:42,565 - INFO - Processed and saved session 2025-03-24 13:30:42 for user user123.
+2025-03-24 13:30:42,566 - ERROR - Session ID 2025-03-24 13:30:42 already exists. Aborting save.
+2025-03-24 13:30:42,566 - INFO - Processed and saved session 2025-03-24 13:30:42 for user user123.
+2025-03-24 13:30:42,567 - ERROR - Session ID 2025-03-24 13:30:42 already exists. Aborting save.
+2025-03-24 13:30:42,567 - INFO - Processed and saved session 2025-03-24 13:30:42 for user user123.
+2025-03-24 13:30:42,568 - ERROR - Session ID 2025-03-24 13:30:42 already exists. Aborting save.
+2025-03-24 13:30:42,569 - INFO - Processed and saved session 2025-03-24 13:30:42 for user user123.
+2025-03-24 13:30:42,613 - ERROR - Session ID 2025-03-24 13:30:42 already exists. Aborting save.
+2025-03-24 13:30:42,613 - INFO - Processed and saved session 2025-03-24 13:30:42 for user user123.
+2025-03-24 13:30:42,614 - ERROR - Session ID 2025-03-24 13:30:42 already exists. Aborting save.
+2025-03-24 13:30:42,615 - INFO - Processed and saved session 2025-03-24 13:30:42 for user user123.
+2025-03-24 13:30:42,616 - ERROR - Session ID 2025-03-24 13:30:42 already exists. Aborting save.
+2025-03-24 13:30:42,616 - INFO - Processed and saved session 2025-03-24 13:30:42 for user user123.
+2025-03-24 13:30:42,617 - ERROR - Session ID 2025-03-24 13:30:42 already exists. Aborting save.
+2025-03-24 13:30:42,617 - INFO - Processed and saved session 2025-03-24 13:30:42 for user user123.
+2025-03-24 13:30:42,661 - ERROR - Session ID 2025-03-24 13:30:42 already exists. Aborting save.
+2025-03-24 13:30:42,662 - INFO - Processed and saved session 2025-03-24 13:30:42 for user user123.
+2025-03-24 13:30:42,663 - ERROR - Session ID 2025-03-24 13:30:42 already exists. Aborting save.
+2025-03-24 13:30:42,663 - INFO - Processed and saved session 2025-03-24 13:30:42 for user user123.
+2025-03-24 13:30:42,664 - ERROR - Session ID 2025-03-24 13:30:42 already exists. Aborting save.
+2025-03-24 13:30:42,665 - INFO - Processed and saved session 2025-03-24 13:30:42 for user user123.
+2025-03-24 13:30:42,666 - ERROR - Session ID 2025-03-24 13:30:42 already exists. Aborting save.
+2025-03-24 13:30:42,667 - INFO - Processed and saved session 2025-03-24 13:30:42 for user user123.
+2025-03-24 13:30:42,710 - ERROR - Session ID 2025-03-24 13:30:42 already exists. Aborting save.
+2025-03-24 13:30:42,711 - INFO - Processed and saved session 2025-03-24 13:30:42 for user user123.
+2025-03-24 13:30:42,712 - ERROR - Session ID 2025-03-24 13:30:42 already exists. Aborting save.
+2025-03-24 13:30:42,713 - INFO - Processed and saved session 2025-03-24 13:30:42 for user user123.
+2025-03-24 13:30:42,714 - ERROR - Session ID 2025-03-24 13:30:42 already exists. Aborting save.
+2025-03-24 13:30:42,714 - INFO - Processed and saved session 2025-03-24 13:30:42 for user user123.
+2025-03-24 13:30:42,715 - ERROR - Session ID 2025-03-24 13:30:42 already exists. Aborting save.
+2025-03-24 13:30:42,716 - INFO - Processed and saved session 2025-03-24 13:30:42 for user user123.
+2025-03-24 13:30:42,759 - ERROR - Session ID 2025-03-24 13:30:42 already exists. Aborting save.
+2025-03-24 13:30:42,760 - INFO - Processed and saved session 2025-03-24 13:30:42 for user user123.
+2025-03-24 13:30:42,762 - ERROR - Session ID 2025-03-24 13:30:42 already exists. Aborting save.
+2025-03-24 13:30:42,763 - INFO - Processed and saved session 2025-03-24 13:30:42 for user user123.
+2025-03-24 13:30:42,764 - ERROR - Session ID 2025-03-24 13:30:42 already exists. Aborting save.
+2025-03-24 13:30:42,765 - INFO - Processed and saved session 2025-03-24 13:30:42 for user user123.
+2025-03-24 13:30:42,766 - ERROR - Session ID 2025-03-24 13:30:42 already exists. Aborting save.
+2025-03-24 13:30:42,767 - INFO - Processed and saved session 2025-03-24 13:30:42 for user user123.
+2025-03-24 13:30:42,809 - ERROR - Session ID 2025-03-24 13:30:42 already exists. Aborting save.
+2025-03-24 13:30:42,810 - INFO - Processed and saved session 2025-03-24 13:30:42 for user user123.
+2025-03-24 13:30:42,813 - ERROR - Session ID 2025-03-24 13:30:42 already exists. Aborting save.
+2025-03-24 13:30:42,814 - INFO - Processed and saved session 2025-03-24 13:30:42 for user user123.
+2025-03-24 13:30:42,819 - ERROR - Session ID 2025-03-24 13:30:42 already exists. Aborting save.
+2025-03-24 13:30:42,820 - INFO - Processed and saved session 2025-03-24 13:30:42 for user user123.
+2025-03-24 13:30:42,821 - ERROR - Session ID 2025-03-24 13:30:42 already exists. Aborting save.
+2025-03-24 13:30:42,822 - INFO - Processed and saved session 2025-03-24 13:30:42 for user user123.
+2025-03-24 13:30:42,860 - ERROR - Session ID 2025-03-24 13:30:42 already exists. Aborting save.
+2025-03-24 13:30:42,860 - INFO - Processed and saved session 2025-03-24 13:30:42 for user user123.
+2025-03-24 13:30:42,861 - ERROR - Session ID 2025-03-24 13:30:42 already exists. Aborting save.
+2025-03-24 13:30:42,862 - INFO - Processed and saved session 2025-03-24 13:30:42 for user user123.
+2025-03-24 13:30:42,863 - ERROR - Session ID 2025-03-24 13:30:42 already exists. Aborting save.
+2025-03-24 13:30:42,864 - INFO - Processed and saved session 2025-03-24 13:30:42 for user user123.
+2025-03-24 13:30:42,866 - ERROR - Session ID 2025-03-24 13:30:42 already exists. Aborting save.
+2025-03-24 13:30:42,866 - INFO - Processed and saved session 2025-03-24 13:30:42 for user user123.
+2025-03-24 13:30:42,906 - ERROR - Session ID 2025-03-24 13:30:42 already exists. Aborting save.
+2025-03-24 13:30:42,907 - INFO - Processed and saved session 2025-03-24 13:30:42 for user user123.
+2025-03-24 13:30:42,909 - ERROR - Session ID 2025-03-24 13:30:42 already exists. Aborting save.
+2025-03-24 13:30:42,910 - INFO - Processed and saved session 2025-03-24 13:30:42 for user user123.
+2025-03-24 11:30:42,973 - INFO - 10.100.46.99 - - [24/Mar/2025 11:30:42] "GET /home HTTP/1.1" 200 -
+2025-03-24 13:30:47,004 - INFO - Session 2025-03-24 13:30:46 saved successfully for user user123.
+2025-03-24 13:30:47,019 - INFO - Processed and saved session 2025-03-24 13:30:46 for user user123.
+2025-03-24 13:30:47,021 - INFO - Session 2025-03-24 13:30:47 saved successfully for user user123.
+2025-03-24 13:30:47,033 - INFO - Processed and saved session 2025-03-24 13:30:47 for user user123.
+2025-03-24 13:30:47,035 - ERROR - Session ID 2025-03-24 13:30:47 already exists. Aborting save.
+2025-03-24 13:30:47,036 - INFO - Processed and saved session 2025-03-24 13:30:47 for user user123.
+2025-03-24 13:30:47,037 - ERROR - Session ID 2025-03-24 13:30:47 already exists. Aborting save.
+2025-03-24 13:30:47,038 - INFO - Processed and saved session 2025-03-24 13:30:47 for user user123.
+2025-03-24 13:30:47,049 - ERROR - Session ID 2025-03-24 13:30:47 already exists. Aborting save.
+2025-03-24 13:30:47,049 - INFO - Processed and saved session 2025-03-24 13:30:47 for user user123.
+2025-03-24 13:30:47,050 - ERROR - Session ID 2025-03-24 13:30:47 already exists. Aborting save.
+2025-03-24 13:30:47,050 - INFO - Processed and saved session 2025-03-24 13:30:47 for user user123.
+2025-03-24 13:30:47,052 - ERROR - Session ID 2025-03-24 13:30:47 already exists. Aborting save.
+2025-03-24 13:30:47,052 - INFO - Processed and saved session 2025-03-24 13:30:47 for user user123.
+2025-03-24 13:30:47,053 - ERROR - Session ID 2025-03-24 13:30:47 already exists. Aborting save.
+2025-03-24 13:30:47,054 - INFO - Processed and saved session 2025-03-24 13:30:47 for user user123.
+2025-03-24 13:30:47,098 - ERROR - Session ID 2025-03-24 13:30:47 already exists. Aborting save.
+2025-03-24 13:30:47,098 - INFO - Processed and saved session 2025-03-24 13:30:47 for user user123.
+2025-03-24 13:30:47,099 - ERROR - Session ID 2025-03-24 13:30:47 already exists. Aborting save.
+2025-03-24 13:30:47,099 - INFO - Processed and saved session 2025-03-24 13:30:47 for user user123.
+2025-03-24 13:30:47,101 - ERROR - Session ID 2025-03-24 13:30:47 already exists. Aborting save.
+2025-03-24 13:30:47,101 - INFO - Processed and saved session 2025-03-24 13:30:47 for user user123.
+2025-03-24 13:30:47,102 - ERROR - Session ID 2025-03-24 13:30:47 already exists. Aborting save.
+2025-03-24 13:30:47,103 - INFO - Processed and saved session 2025-03-24 13:30:47 for user user123.
+2025-03-24 13:30:47,146 - ERROR - Session ID 2025-03-24 13:30:47 already exists. Aborting save.
+2025-03-24 13:30:47,147 - INFO - Processed and saved session 2025-03-24 13:30:47 for user user123.
+2025-03-24 13:30:47,153 - ERROR - Session ID 2025-03-24 13:30:47 already exists. Aborting save.
+2025-03-24 13:30:47,153 - INFO - Processed and saved session 2025-03-24 13:30:47 for user user123.
+2025-03-24 13:30:47,155 - ERROR - Session ID 2025-03-24 13:30:47 already exists. Aborting save.
+2025-03-24 13:30:47,155 - INFO - Processed and saved session 2025-03-24 13:30:47 for user user123.
+2025-03-24 13:30:47,157 - ERROR - Session ID 2025-03-24 13:30:47 already exists. Aborting save.
+2025-03-24 13:30:47,157 - INFO - Processed and saved session 2025-03-24 13:30:47 for user user123.
+2025-03-24 13:30:47,195 - ERROR - Session ID 2025-03-24 13:30:47 already exists. Aborting save.
+2025-03-24 13:30:47,195 - INFO - Processed and saved session 2025-03-24 13:30:47 for user user123.
+2025-03-24 13:30:47,197 - ERROR - Session ID 2025-03-24 13:30:47 already exists. Aborting save.
+2025-03-24 13:30:47,197 - INFO - Processed and saved session 2025-03-24 13:30:47 for user user123.
+2025-03-24 13:30:47,199 - ERROR - Session ID 2025-03-24 13:30:47 already exists. Aborting save.
+2025-03-24 13:30:47,199 - INFO - Processed and saved session 2025-03-24 13:30:47 for user user123.
+2025-03-24 13:30:47,200 - ERROR - Session ID 2025-03-24 13:30:47 already exists. Aborting save.
+2025-03-24 13:30:47,201 - INFO - Processed and saved session 2025-03-24 13:30:47 for user user123.
+2025-03-24 13:30:47,245 - ERROR - Session ID 2025-03-24 13:30:47 already exists. Aborting save.
+2025-03-24 13:30:47,245 - INFO - Processed and saved session 2025-03-24 13:30:47 for user user123.
+2025-03-24 13:30:47,246 - ERROR - Session ID 2025-03-24 13:30:47 already exists. Aborting save.
+2025-03-24 13:30:47,246 - INFO - Processed and saved session 2025-03-24 13:30:47 for user user123.
+2025-03-24 13:30:47,248 - ERROR - Session ID 2025-03-24 13:30:47 already exists. Aborting save.
+2025-03-24 13:30:47,248 - INFO - Processed and saved session 2025-03-24 13:30:47 for user user123.
+2025-03-24 13:30:47,249 - ERROR - Session ID 2025-03-24 13:30:47 already exists. Aborting save.
+2025-03-24 13:30:47,250 - INFO - Processed and saved session 2025-03-24 13:30:47 for user user123.
+2025-03-24 13:30:47,293 - ERROR - Session ID 2025-03-24 13:30:47 already exists. Aborting save.
+2025-03-24 13:30:47,293 - INFO - Processed and saved session 2025-03-24 13:30:47 for user user123.
+2025-03-24 13:30:47,294 - ERROR - Session ID 2025-03-24 13:30:47 already exists. Aborting save.
+2025-03-24 13:30:47,295 - INFO - Processed and saved session 2025-03-24 13:30:47 for user user123.
+2025-03-24 13:30:47,296 - ERROR - Session ID 2025-03-24 13:30:47 already exists. Aborting save.
+2025-03-24 13:30:47,296 - INFO - Processed and saved session 2025-03-24 13:30:47 for user user123.
+2025-03-24 13:30:47,298 - ERROR - Session ID 2025-03-24 13:30:47 already exists. Aborting save.
+2025-03-24 13:30:47,298 - INFO - Processed and saved session 2025-03-24 13:30:47 for user user123.
+2025-03-24 13:30:47,345 - ERROR - Session ID 2025-03-24 13:30:47 already exists. Aborting save.
+2025-03-24 13:30:47,346 - INFO - Processed and saved session 2025-03-24 13:30:47 for user user123.
+2025-03-24 13:30:47,347 - ERROR - Session ID 2025-03-24 13:30:47 already exists. Aborting save.
+2025-03-24 13:30:47,347 - INFO - Processed and saved session 2025-03-24 13:30:47 for user user123.
+2025-03-24 13:30:47,349 - ERROR - Session ID 2025-03-24 13:30:47 already exists. Aborting save.
+2025-03-24 13:30:47,349 - INFO - Processed and saved session 2025-03-24 13:30:47 for user user123.
+2025-03-24 13:30:47,350 - ERROR - Session ID 2025-03-24 13:30:47 already exists. Aborting save.
+2025-03-24 13:30:47,351 - INFO - Processed and saved session 2025-03-24 13:30:47 for user user123.
+2025-03-24 13:30:47,390 - ERROR - Session ID 2025-03-24 13:30:47 already exists. Aborting save.
+2025-03-24 13:30:47,391 - INFO - Processed and saved session 2025-03-24 13:30:47 for user user123.
+2025-03-24 13:30:47,392 - ERROR - Session ID 2025-03-24 13:30:47 already exists. Aborting save.
+2025-03-24 13:30:47,392 - INFO - Processed and saved session 2025-03-24 13:30:47 for user user123.
+2025-03-24 13:30:47,394 - ERROR - Session ID 2025-03-24 13:30:47 already exists. Aborting save.
+2025-03-24 13:30:47,394 - INFO - Processed and saved session 2025-03-24 13:30:47 for user user123.
+2025-03-24 13:30:47,395 - ERROR - Session ID 2025-03-24 13:30:47 already exists. Aborting save.
+2025-03-24 13:30:47,396 - INFO - Processed and saved session 2025-03-24 13:30:47 for user user123.
+2025-03-24 13:30:47,439 - ERROR - Session ID 2025-03-24 13:30:47 already exists. Aborting save.
+2025-03-24 13:30:47,439 - INFO - Processed and saved session 2025-03-24 13:30:47 for user user123.
+2025-03-24 13:30:47,441 - ERROR - Session ID 2025-03-24 13:30:47 already exists. Aborting save.
+2025-03-24 13:30:47,441 - INFO - Processed and saved session 2025-03-24 13:30:47 for user user123.
+2025-03-24 13:30:47,442 - ERROR - Session ID 2025-03-24 13:30:47 already exists. Aborting save.
+2025-03-24 13:30:47,442 - INFO - Processed and saved session 2025-03-24 13:30:47 for user user123.
+2025-03-24 13:30:47,443 - ERROR - Session ID 2025-03-24 13:30:47 already exists. Aborting save.
+2025-03-24 13:30:47,443 - INFO - Processed and saved session 2025-03-24 13:30:47 for user user123.
+2025-03-24 13:30:47,487 - ERROR - Session ID 2025-03-24 13:30:47 already exists. Aborting save.
+2025-03-24 13:30:47,488 - INFO - Processed and saved session 2025-03-24 13:30:47 for user user123.
+2025-03-24 13:30:47,489 - ERROR - Session ID 2025-03-24 13:30:47 already exists. Aborting save.
+2025-03-24 13:30:47,489 - INFO - Processed and saved session 2025-03-24 13:30:47 for user user123.
+2025-03-24 11:30:49,702 - INFO - 10.100.46.99 - - [24/Mar/2025 11:30:49] "GET /home HTTP/1.1" 200 -
+2025-03-24 14:45:13,201 - INFO - Database initialized successfully.
+2025-03-24 14:45:13,204 - WARNING - User already exists. Skipping initialization.
+2025-03-24 14:46:27,693 - INFO - Database initialized successfully.
+2025-03-24 14:46:27,694 - WARNING - User already exists. Skipping initialization.
+2025-03-24 14:46:33,308 - INFO - Session 2025-03-24 14:46:33 saved successfully for user user123.
+2025-03-24 14:46:33,332 - INFO - Processed and saved session 2025-03-24 14:46:33 for user user123.
+2025-03-24 14:46:34,087 - INFO - Session 2025-03-24 14:46:34 saved successfully for user user123.
+2025-03-24 14:46:34,106 - INFO - Processed and saved session 2025-03-24 14:46:34 for user user123.
+2025-03-24 14:46:34,818 - ERROR - Session ID 2025-03-24 14:46:34 already exists. Aborting save.
+2025-03-24 14:46:34,819 - INFO - Processed and saved session 2025-03-24 14:46:34 for user user123.
+2025-03-24 14:46:35,306 - INFO - Session 2025-03-24 14:46:35 saved successfully for user user123.
+2025-03-24 14:46:35,327 - INFO - Processed and saved session 2025-03-24 14:46:35 for user user123.
+2025-03-24 14:46:35,987 - ERROR - Session ID 2025-03-24 14:46:35 already exists. Aborting save.
+2025-03-24 14:46:35,987 - INFO - Processed and saved session 2025-03-24 14:46:35 for user user123.
+2025-03-24 14:46:36,475 - INFO - Session 2025-03-24 14:46:36 saved successfully for user user123.
+2025-03-24 14:46:36,487 - INFO - Processed and saved session 2025-03-24 14:46:36 for user user123.
+2025-03-24 14:46:37,011 - INFO - Session 2025-03-24 14:46:37 saved successfully for user user123.
+2025-03-24 14:46:37,025 - INFO - Processed and saved session 2025-03-24 14:46:37 for user user123.
+2025-03-24 14:46:37,644 - ERROR - Session ID 2025-03-24 14:46:37 already exists. Aborting save.
+2025-03-24 14:46:37,645 - INFO - Processed and saved session 2025-03-24 14:46:37 for user user123.
+2025-03-24 14:46:38,132 - INFO - Session 2025-03-24 14:46:38 saved successfully for user user123.
+2025-03-24 14:46:38,147 - INFO - Processed and saved session 2025-03-24 14:46:38 for user user123.
+2025-03-24 14:46:40,424 - INFO - Session 2025-03-24 14:46:40 saved successfully for user user123.
+2025-03-24 14:46:40,439 - INFO - Processed and saved session 2025-03-24 14:46:40 for user user123.
+2025-03-24 14:46:41,058 - INFO - Session 2025-03-24 14:46:41 saved successfully for user user123.
+2025-03-24 14:46:41,074 - INFO - Processed and saved session 2025-03-24 14:46:41 for user user123.
+2025-03-24 14:46:41,594 - ERROR - Session ID 2025-03-24 14:46:41 already exists. Aborting save.
+2025-03-24 14:46:41,595 - INFO - Processed and saved session 2025-03-24 14:46:41 for user user123.
+2025-03-24 14:46:42,082 - INFO - Session 2025-03-24 14:46:42 saved successfully for user user123.
+2025-03-24 14:46:42,102 - INFO - Processed and saved session 2025-03-24 14:46:42 for user user123.
+2025-03-24 14:46:42,618 - ERROR - Session ID 2025-03-24 14:46:42 already exists. Aborting save.
+2025-03-24 14:46:42,619 - INFO - Processed and saved session 2025-03-24 14:46:42 for user user123.
+2025-03-24 14:46:43,106 - INFO - Session 2025-03-24 14:46:43 saved successfully for user user123.
+2025-03-24 14:46:43,120 - INFO - Processed and saved session 2025-03-24 14:46:43 for user user123.
+2025-03-24 14:49:50,806 - INFO - Session 2025-03-24 14:49:50 saved successfully for user user123.
+2025-03-24 14:49:50,824 - INFO - Processed and saved session 2025-03-24 14:49:50 for user user123.
+2025-03-24 14:49:54,657 - INFO - Session 2025-03-24 14:49:54 saved successfully for user user123.
+2025-03-24 14:49:54,671 - INFO - Processed and saved session 2025-03-24 14:49:54 for user user123.
+2025-03-24 14:51:40,514 - INFO - Database initialized successfully.
+2025-03-24 14:51:40,516 - WARNING - User already exists. Skipping initialization.
+2025-03-24 14:52:46,082 - INFO - Database initialized successfully.
+2025-03-24 14:52:46,084 - WARNING - User already exists. Skipping initialization.
+2025-03-24 14:54:43,357 - INFO - Database initialized successfully.
+2025-03-24 14:54:43,358 - WARNING - User already exists. Skipping initialization.
+2025-03-24 14:57:04,240 - INFO - Database initialized successfully.
+2025-03-24 14:57:04,242 - WARNING - User already exists. Skipping initialization.
+2025-03-24 15:11:50,793 - INFO - Database initialized successfully.
+2025-03-24 15:11:50,794 - WARNING - User already exists. Skipping initialization.
+2025-03-24 15:12:23,780 - INFO - Session 2025-03-24 15:12:23 saved successfully for user user123.
+2025-03-24 15:12:23,799 - INFO - Processed and saved session 2025-03-24 15:12:23 for user user123.
+2025-03-24 15:12:30,067 - INFO - Session 2025-03-24 15:12:30 saved successfully for user user123.
+2025-03-24 15:12:30,082 - INFO - Processed and saved session 2025-03-24 15:12:30 for user user123.
+2025-03-24 15:14:15,076 - INFO - Session 2025-03-24 15:14:15 saved successfully for user user123.
+2025-03-24 15:14:15,090 - INFO - Processed and saved session 2025-03-24 15:14:15 for user user123.
+2025-03-24 15:14:15,709 - ERROR - Session ID 2025-03-24 15:14:15 already exists. Aborting save.
+2025-03-24 15:14:15,710 - INFO - Processed and saved session 2025-03-24 15:14:15 for user user123.
+2025-03-24 15:14:16,246 - INFO - Session 2025-03-24 15:14:16 saved successfully for user user123.
+2025-03-24 15:14:16,264 - INFO - Processed and saved session 2025-03-24 15:14:16 for user user123.
+2025-03-24 15:14:18,295 - INFO - Session 2025-03-24 15:14:18 saved successfully for user user123.
+2025-03-24 15:14:18,317 - INFO - Processed and saved session 2025-03-24 15:14:18 for user user123.
+2025-03-24 15:14:25,508 - INFO - Session 2025-03-24 15:14:25 saved successfully for user user123.
+2025-03-24 15:14:25,524 - INFO - Processed and saved session 2025-03-24 15:14:25 for user user123.
+2025-03-24 15:14:28,531 - INFO - Session 2025-03-24 15:14:28 saved successfully for user user123.
+2025-03-24 15:14:28,563 - INFO - Processed and saved session 2025-03-24 15:14:28 for user user123.
+2025-03-24 15:14:29,749 - INFO - Session 2025-03-24 15:14:29 saved successfully for user user123.
+2025-03-24 15:14:29,763 - INFO - Processed and saved session 2025-03-24 15:14:29 for user user123.
+2025-03-24 15:22:14,350 - INFO - Database initialized successfully.
+2025-03-24 15:22:14,356 - WARNING - User already exists. Skipping initialization.
+2025-03-24 15:22:47,384 - INFO - Session 2025-03-24 15:22:47 saved successfully for user user123.
+2025-03-24 15:22:47,403 - INFO - Processed and saved session 2025-03-24 15:22:47 for user user123.
+2025-03-24 15:22:48,308 - INFO - Session 2025-03-24 15:22:48 saved successfully for user user123.
+2025-03-24 15:22:48,328 - INFO - Processed and saved session 2025-03-24 15:22:48 for user user123.
+2025-03-24 15:22:48,893 - ERROR - Session ID 2025-03-24 15:22:48 already exists. Aborting save.
+2025-03-24 15:22:48,894 - INFO - Processed and saved session 2025-03-24 15:22:48 for user user123.
+2025-03-24 15:22:49,576 - INFO - Session 2025-03-24 15:22:49 saved successfully for user user123.
+2025-03-24 15:22:49,594 - INFO - Processed and saved session 2025-03-24 15:22:49 for user user123.
+2025-03-24 15:22:52,941 - INFO - Session 2025-03-24 15:22:52 saved successfully for user user123.
+2025-03-24 15:22:52,959 - INFO - Processed and saved session 2025-03-24 15:22:52 for user user123.
+2025-03-24 15:29:11,966 - INFO - Database initialized successfully.
+2025-03-24 15:29:11,968 - WARNING - User already exists. Skipping initialization.
+2025-03-24 15:29:26,496 - INFO - Session 2025-03-24 15:29:26 saved successfully for user user123.
+2025-03-24 15:29:26,511 - INFO - Processed and saved session 2025-03-24 15:29:26 for user user123.
+2025-03-24 15:29:30,199 - INFO - Session 2025-03-24 15:29:30 saved successfully for user user123.
+2025-03-24 15:29:30,216 - INFO - Processed and saved session 2025-03-24 15:29:30 for user user123.
+2025-03-24 16:18:20,258 - INFO - Database initialized successfully.
+2025-03-24 16:18:20,272 - WARNING - User already exists. Skipping initialization.
+2025-03-24 16:18:24,996 - INFO - Session 2025-03-24 16:18:24 saved successfully for user user123.
+2025-03-24 16:18:25,433 - INFO - Processed and saved session 2025-03-24 16:18:24 for user user123.
+2025-03-24 16:19:36,123 - INFO - Session 2025-03-24 16:19:36 saved successfully for user user123.
+2025-03-24 16:19:36,178 - INFO - Processed and saved session 2025-03-24 16:19:36 for user user123.
+2025-03-24 16:19:38,222 - INFO - Session 2025-03-24 16:19:38 saved successfully for user user123.
+2025-03-24 16:19:38,260 - INFO - Processed and saved session 2025-03-24 16:19:38 for user user123.
+2025-03-24 16:19:39,245 - INFO - Session 2025-03-24 16:19:39 saved successfully for user user123.
+2025-03-24 16:19:39,263 - INFO - Processed and saved session 2025-03-24 16:19:39 for user user123.
+2025-03-24 16:20:14,246 - INFO - Session 2025-03-24 16:20:14 saved successfully for user user123.
+2025-03-24 16:20:14,281 - INFO - Processed and saved session 2025-03-24 16:20:14 for user user123.
+2025-03-24 16:20:14,881 - ERROR - Session ID 2025-03-24 16:20:14 already exists. Aborting save.
+2025-03-24 16:20:14,881 - INFO - Processed and saved session 2025-03-24 16:20:14 for user user123.
+2025-03-24 16:20:15,416 - INFO - Session 2025-03-24 16:20:15 saved successfully for user user123.
+2025-03-24 16:20:15,472 - INFO - Processed and saved session 2025-03-24 16:20:15 for user user123.
+2025-03-24 16:27:40,921 - INFO - Database initialized successfully.
+2025-03-24 16:27:40,924 - WARNING - User already exists. Skipping initialization.
+2025-03-24 16:30:22,568 - INFO - Database initialized successfully.
+2025-03-24 16:30:22,569 - WARNING - User already exists. Skipping initialization.
+2025-03-24 16:50:48,491 - INFO - Database initialized successfully.
+2025-03-24 16:50:48,492 - WARNING - User already exists. Skipping initialization.
+2025-03-24 16:55:54,183 - INFO - Database initialized successfully.
+2025-03-24 16:55:54,184 - WARNING - User already exists. Skipping initialization.
+2025-03-24 17:10:44,364 - INFO - Database initialized successfully.
+2025-03-24 17:10:44,366 - WARNING - User already exists. Skipping initialization.
+2025-03-24 17:14:02,546 - INFO - Database initialized successfully.
+2025-03-24 17:14:02,547 - WARNING - User already exists. Skipping initialization.
+2025-03-24 17:16:05,240 - INFO - Database initialized successfully.
+2025-03-24 17:16:05,241 - WARNING - User already exists. Skipping initialization.
+2025-03-24 17:16:53,617 - INFO - Session 2025-03-24 17:16:53 saved successfully for user user123.
+2025-03-24 17:16:53,629 - INFO - Processed and saved session 2025-03-24 17:16:53 for user user123.
+2025-03-24 17:18:15,008 - INFO - Database initialized successfully.
+2025-03-24 17:18:15,009 - WARNING - User already exists. Skipping initialization.
+2025-03-24 17:18:34,006 - INFO - Session 2025-03-24 17:18:34 saved successfully for user user123.
+2025-03-24 17:18:34,020 - INFO - Processed and saved session 2025-03-24 17:18:34 for user user123.
+2025-03-24 17:18:40,731 - INFO - Session 2025-03-24 17:18:40 saved successfully for user user123.
+2025-03-24 17:18:40,745 - INFO - Processed and saved session 2025-03-24 17:18:40 for user user123.
+2025-03-24 17:18:55,991 - INFO - Session 2025-03-24 17:18:55 saved successfully for user user123.
+2025-03-24 17:18:56,005 - INFO - Processed and saved session 2025-03-24 17:18:55 for user user123.
+2025-03-24 17:19:40,645 - INFO - Session 2025-03-24 17:19:40 saved successfully for user user123.
+2025-03-24 17:19:40,661 - INFO - Processed and saved session 2025-03-24 17:19:40 for user user123.
+2025-03-24 17:19:53,665 - INFO - Session 2025-03-24 17:19:53 saved successfully for user user123.
+2025-03-24 17:19:53,679 - INFO - Processed and saved session 2025-03-24 17:19:53 for user user123.
+2025-03-24 17:20:07,897 - INFO - Session 2025-03-24 17:20:07 saved successfully for user user123.
+2025-03-24 17:20:07,910 - INFO - Processed and saved session 2025-03-24 17:20:07 for user user123.
+2025-03-24 17:21:10,193 - INFO - Database initialized successfully.
+2025-03-24 17:21:10,194 - WARNING - User already exists. Skipping initialization.
+2025-03-24 17:21:44,419 - INFO - Session 2025-03-24 17:21:44 saved successfully for user user123.
+2025-03-24 17:21:44,438 - INFO - Processed and saved session 2025-03-24 17:21:44 for user user123.
+2025-03-24 17:21:52,609 - INFO - Session 2025-03-24 17:21:52 saved successfully for user user123.
+2025-03-24 17:21:52,623 - INFO - Processed and saved session 2025-03-24 17:21:52 for user user123.
+2025-03-24 17:21:56,801 - INFO - Session 2025-03-24 17:21:56 saved successfully for user user123.
+2025-03-24 17:21:56,813 - INFO - Processed and saved session 2025-03-24 17:21:56 for user user123.
+2025-03-24 17:34:09,968 - INFO - Database initialized successfully.
+2025-03-24 17:34:09,971 - WARNING - User already exists. Skipping initialization.
+2025-03-24 17:34:53,926 - INFO - Database initialized successfully.
+2025-03-24 17:34:54,031 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://10.100.46.99:5001
+2025-03-24 17:34:54,032 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-24 17:34:54,054 - INFO -  * Restarting with stat
+2025-03-24 17:34:55,442 - INFO - Database initialized successfully.
+2025-03-24 17:34:55,501 - WARNING -  * Debugger is active!
+2025-03-24 17:34:55,507 - INFO -  * Debugger PIN: 665-372-630
+2025-03-24 17:35:08,332 - INFO - 10.100.46.99 - - [24/Mar/2025 17:35:08] "GET / HTTP/1.1" 200 -
+2025-03-24 17:35:10,739 - INFO - 10.100.46.99 - - [24/Mar/2025 17:35:10] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-24 17:37:18,881 - INFO - Database initialized successfully.
+2025-03-24 17:37:18,884 - WARNING - User already exists. Skipping initialization.
+2025-03-24 17:37:40,120 - INFO - Database initialized successfully.
+2025-03-24 17:37:40,121 - WARNING - User already exists. Skipping initialization.
+2025-03-24 17:41:17,626 - INFO - Database initialized successfully.
+2025-03-24 17:41:17,627 - WARNING - User already exists. Skipping initialization.
+2025-03-24 17:41:47,447 - INFO - Database initialized successfully.
+2025-03-24 17:41:47,449 - WARNING - User already exists. Skipping initialization.
+2025-03-24 17:46:27,213 - INFO - Database initialized successfully.
+2025-03-24 17:46:27,214 - WARNING - User already exists. Skipping initialization.
+2025-03-24 17:48:12,955 - INFO - Database initialized successfully.
+2025-03-24 17:48:12,957 - WARNING - User already exists. Skipping initialization.
+2025-03-24 17:48:32,574 - INFO - Database initialized successfully.
+2025-03-24 17:48:32,578 - WARNING - User already exists. Skipping initialization.
+2025-03-24 17:50:41,283 - INFO - Database initialized successfully.
+2025-03-24 17:50:41,284 - WARNING - User already exists. Skipping initialization.
+2025-03-24 17:50:59,161 - INFO - Database initialized successfully.
+2025-03-24 17:50:59,163 - WARNING - User already exists. Skipping initialization.
+2025-03-24 17:51:46,164 - INFO - Database initialized successfully.
+2025-03-24 17:51:46,165 - WARNING - User already exists. Skipping initialization.
+2025-03-24 17:54:53,232 - INFO - Database initialized successfully.
+2025-03-24 17:54:53,233 - WARNING - User already exists. Skipping initialization.
+2025-03-24 17:55:52,317 - INFO - Session 2025-03-24 17:55:52 saved successfully for user user123.
+2025-03-24 17:55:52,329 - INFO - Processed and saved session 2025-03-24 17:55:52 for user user123.
+2025-03-24 17:55:57,826 - INFO - Session 2025-03-24 17:55:57 saved successfully for user user123.
+2025-03-24 17:55:57,841 - INFO - Processed and saved session 2025-03-24 17:55:57 for user user123.
+2025-03-24 17:57:51,920 - INFO - 10.100.46.99 - - [24/Mar/2025 17:57:51] "POST / HTTP/1.1" 200 -
+2025-03-24 17:57:58,408 - INFO - 10.100.46.99 - - [24/Mar/2025 17:57:58] "GET / HTTP/1.1" 200 -
+2025-03-24 17:58:02,939 - INFO - 10.100.46.99 - - [24/Mar/2025 17:58:02] "GET / HTTP/1.1" 200 -
+2025-03-24 17:58:11,792 - INFO - 10.100.46.99 - - [24/Mar/2025 17:58:11] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-03-24 17:58:11,887 - INFO - 10.100.46.99 - - [24/Mar/2025 17:58:11] "GET /home HTTP/1.1" 200 -

@@ -2,6 +2,7 @@ import sqlite3
 
 import hike
 import threading
+import logging
 
 DB_FILE_NAME = 'sessions.db'
 user0 = 'user123'

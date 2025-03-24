@@ -26,6 +26,7 @@ class HubBluetooth:
                     self.connected = True
                     print("Connected to Watch!")
                     self.send_message("c")
+              
                     break
                 except btle.BTLEException as e:
                     print(f"Connection failed: {e}. Retrying in 2 seconds...")
@@ -38,8 +39,8 @@ class HubBluetooth:
         """Sends a message to the Watch over BLE."""
         if self.connected:
             try:
-                # Assuming handle 0x0025 is the correct characteristic for writing
-                handle = 0x0025
+                # Assuming handle 45 is the correct characteristic for writing
+                handle = 45
                 self.peripheral.writeCharacteristic(handle, message.encode())
                 print(f"Sent '{message}' to Watch")
             except btle.BTLEException as e:
@@ -53,7 +54,7 @@ class HubBluetooth:
         Finally sends a `r` as a response to the Watch for successfully processing the
         incoming data.
 
-        If does not receive data, then it tries to send `c` as a confirmation of the established
+        If does not receive data, then it tries to send `a` as a confirmation of the established
         connection at every second to inform the Watch that the Hub is able to receive sessions.
 
         Args:
@@ -67,14 +68,14 @@ class HubBluetooth:
         remainder = b''
         while True:
             try:
-                # Assuming handle 0x0025 is for notifications
                 self.peripheral.setDelegate(NotificationDelegate(callback))
 
                 while True:
                     if self.peripheral.waitForNotifications(1.0):
+                        self.send_message("r")
                         continue
-                    self.send_message("c")  # Send heartbeat to confirm connection
-
+                    self.send_message("a")  # Send heartbeat to confirm connection
+                    
             except KeyboardInterrupt:
                 self.peripheral.disconnect()
                 print("Shutting down the receiver.")
@@ -117,7 +118,7 @@ class HubBluetooth:
         """
         m = message.decode('utf-8')
         steps = int(m)
-        print("steps", steps)
+        #print("steps", steps)
 
         hs = hike.HikeSession()
         hs.id     = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -136,13 +137,14 @@ class NotificationDelegate(btle.DefaultDelegate):
 
     def handleNotification(self, cHandle, data):
         try:
+            hubbt = HubBluetooth()
             messages = data.decode("utf-8").split("\n")
-            sessions = HubBluetooth.messages_to_sessions(messages)
-            #
+            sessions = hubbt.messages_to_sessions(messages)
             for h in sessions:
                 print(hike.to_list(h))
             self.callback(sessions, db.user0)
             print(f"Received data: {messages}")
+    
             
         except Exception as e:
             print(f"Error processing data: {e}")

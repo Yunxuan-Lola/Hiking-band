@@ -37,12 +37,9 @@ def main():
             hubbt.synchronize(callback=process_sessions)
             
     except KeyboardInterrupt:
-        #print("CTRL+C Pressed. Shutting down the server...")
         logging.info("CTRL+C Pressed. Shutting down the server.")
     except Exception as e:
         logging.error(f"Unexpected shutdown... ERROR: {e}")
-        #print(f"Unexpected shutdown...")
-        #print(f"ERROR: {e}")
         hubbt.sock.close()
         raise e
 
