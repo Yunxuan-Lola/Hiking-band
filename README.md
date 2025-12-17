@@ -15,7 +15,9 @@ Arduino IDE for Watch firmware
 ### File structure
 Smartwatch Side (Arduino):
 1. hikingassistant.ino: main logic, button UI & BLE communication
-2. config.h: device config
+2. src: source file directory (including event.cpp, ui.cpp)
+3. inc: include file directory (including config.h, event.h, ui.h)
+   config.h: device config
 
 Raspberry Pi Side(Python):
 1. hike.py: Defines the HikeSession class for sessions 
