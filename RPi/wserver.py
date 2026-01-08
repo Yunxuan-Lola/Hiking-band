@@ -5,6 +5,7 @@ from flask import Response
 
 import db
 import hike
+import time
 
 app = Flask(__name__, template_folder=".")
 app.secret_key = "testsecretkey"
@@ -72,6 +73,25 @@ def post_session():
     ok = hdb.save(s, username)
     return jsonify({"ok": ok})
 
+@app.route('/api/sessions_timing')
+def sessions_timing():
+    if "username" not in session:
+        return jsonify({"error": "login required"}), 401
+
+    username = session["username"]
+
+    t0 = time.perf_counter()
+    t_db0 = time.perf_counter()
+    sessions_list = hdb.get_sessions(username)  # DB 查询
+    db_ms = (time.perf_counter() - t_db0) * 1000
+    total_ms = (time.perf_counter() - t0) * 1000
+
+    return jsonify({
+        "user": username,
+        "count": len(sessions_list),
+        "db_ms": round(db_ms, 3),
+        "total_ms": round(total_ms, 3),
+    })
 
 if __name__ == "__main__":
     app.run('10.100.46.99', port=5001, debug=True)
