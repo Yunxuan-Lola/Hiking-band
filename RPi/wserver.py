@@ -10,7 +10,6 @@ app = Flask(__name__, template_folder=".")
 app.secret_key = "testsecretkey"
 hdb = db.HubDatabase()
 
-
 @app.route('/', methods=['GET', 'POST'])
 def get_login():
     if request.method == "POST":
@@ -27,6 +26,20 @@ def get_login():
         
     return render_template('login.html')
 
+@app.route('/register', methods=['GET', 'POST'])
+def get_register():
+    if request.method == "POST":
+        username = request.form["username"].strip()
+        password = request.form["password"]
+
+        ok = hdb.create_user(username, password)
+        if ok:
+            session["username"] = username
+            return redirect(url_for("get_home"))
+        else:
+            return "User already exists."
+
+    return render_template('register.html')
 
 @app.route('/home')
 def get_home():
@@ -42,6 +55,22 @@ def get_logout():
     session.pop("username", None)
     return redirect(url_for("get_login"))
 
+@app.route('/api/session', methods=['POST'])
+def post_session():
+    if "username" not in session:
+        return jsonify({"error": "login required"}), 401
+
+    username = session["username"]
+
+    data = request.get_json(force=True)
+    s = hike.HikeSession(
+        id=data["id"],
+        km=data["km"],
+        steps=data["steps"],
+        kcal=data["burnt_kcal"],
+    )
+    ok = hdb.save(s, username)
+    return jsonify({"ok": ok})
 
 
 if __name__ == "__main__":

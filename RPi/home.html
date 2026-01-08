@@ -5,16 +5,18 @@
 <body>
     <h1>Previous Hiking Sessions for {{user}}</h1>
 
+    <p><a href="{{ url_for('get_logout') }}">Logout</a></p>
+
     {% if sessions %}
         <ul>
         {% for session in sessions | reverse %}
             <li>
                 <strong>Session:</strong> {{ session.id | string }}<br>
-		<strong>Steps:</strong> {{ session.steps }}<br>
+		        <strong>Steps:</strong> {{ session.steps }}<br>
                 <strong>Distance (km):</strong> {{ session.km }}<br>
                 <strong>Burnt Calories (kcal):</strong> {{ session.kcal | int}}<br>
-		<br>
-	    </li>
+		        <br>
+	        </li>
         {% endfor %}
         </ul>
     {% else %}

@@ -268,6 +268,5 @@ void setup() {
 }
 
 void loop() {
-    // loop 实际上已经不再承担主要逻辑了
     vTaskDelay(pdMS_TO_TICKS(1000));
 }
