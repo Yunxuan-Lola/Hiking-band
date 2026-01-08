@@ -247,13 +247,12 @@ void setup() {
     app.previousSteps   = 0;
     app.previousDistance = 0.0f;
 
-    // 创建 FreeRTOS 任务
     xTaskCreate(
         TouchTask,
         "TouchTask",
         4096,
         nullptr,
-        2,              // 中优先级
+        2,              // 中
         &touchTaskHandle
     );
 
@@ -262,7 +261,7 @@ void setup() {
         "StepTask",
         4096,
         nullptr,
-        3,              // 高优先级
+        3,              // 高
         &stepTaskHandle
     );
 }
