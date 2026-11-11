@@ -1,26 +1,19 @@
-#include "events.h"
+#include "../inc/events.h"
+#include <Arduino.h>
+#include <freertos/FreeRTOS.h>
+#include <freertos/queue.h>
 
-static const int EVENT_QUEUE_SIZE = 16;
-static AppEvent eventQueue[EVENT_QUEUE_SIZE];
-static int eventHead = 0;
-static int eventTail = 0;
+static QueueHandle_t eventQueue = nullptr;
+
+void events_init(unsigned size) {
+    eventQueue = xQueueCreate(size, sizeof(AppEvent));
+}
 
 bool enqueueEvent(EventType t) {
-    int next = (eventHead + 1) % EVENT_QUEUE_SIZE;
-    if (next == eventTail) {
-        // 队列已满，丢弃事件
-        return false;
-    }
-    eventQueue[eventHead].type = t;
-    eventHead = next;
-    return true;
+    AppEvent event = {t};
+    return eventQueue && xQueueSend(eventQueue, &event, 0) == pdTRUE;
 }
 
 bool dequeueEvent(AppEvent &e) {
-    if (eventHead == eventTail) {
-        return false;
-    }
-    e = eventQueue[eventTail];
-    eventTail = (eventTail + 1) % EVENT_QUEUE_SIZE;
-    return true;
+    return eventQueue && xQueueReceive(eventQueue, &e, 0) == pdTRUE;
 }

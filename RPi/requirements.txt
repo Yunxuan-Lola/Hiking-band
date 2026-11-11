@@ -1,4 +1,5 @@
-pybluez==0.23
-flask==1.1.2
-pillow==8.1.2
-# unicornhathd=0.0.4 # you need to install this as sudo
+bluepy>=1.3.0
+flask>=2.2,<4
+numpy>=1.23,<3
+scipy>=1.10,<2
+scikit-learn==1.6.1

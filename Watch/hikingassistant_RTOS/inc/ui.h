@@ -1,6 +1,6 @@
 #pragma once
 #include <stdint.h>
-#include <TFT_eSPI.h>
+class TFT_eSPI;
 
 void ui_init(TFT_eSPI *display);
 void ui_drawTitle();

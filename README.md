@@ -1,126 +1,99 @@
-## Project description
+# Hiking Band: wearable activity recognition
 
-### Project introduction
-A wearable hiking tracker built on TTGO T-Watch 2020 V3 and a Raspberry Pi 3B+ hub, capable of tracking and syncing hiking session data (steps, distance, calories) with a web interface.
+TTGO T-Watch 2020 V3 collects wrist accelerometer data and sends it over BLE to a Raspberry Pi 3B+ running Linux. The Pi records the stream, runs a lightweight activity classifier, stores hiking sessions, and displays their summaries in a local web interface.
 
-### Requirement
-TTGO T-Watch 2020 V3
+## Documentation
 
-Raspberry Pi 3B+ with Bluetooth
+- [Document index](docs/README.md): all project documents, including Chinese summaries.
+- [Design report](docs/design_report.md) and [PDF](docs/design_report.pdf): architecture, packet format, storage, failure handling, and verification status.
+- [User manual](docs/user_manual.md) and [PDF](docs/user_manual.pdf): setup, watch workflow, offline checks, files, and troubleshooting.
+- [Software requirements](docs/requirements.md): functional behavior and operating constraints.
+- [Model evaluation](docs/model_evaluation.md): public-data metrics and limitations.
 
-Python 3.10+, Flask, BluePy
+## Repository layout
 
-Arduino IDE for Watch firmware
-
-### File structure
-Smartwatch Side (Arduino):
-1. hikingassistant.ino: main logic, event handler & BLE communication
-2. src: source file directory (including event.cpp, ui.cpp)
-3. inc: include file directory (including config.h, event.h, ui.h)
-   config.h: device config
-
-Raspberry Pi Side(Python):
-1. hike.py: Defines the HikeSession class for sessions 
-2. bt.py: Bluetooth handler class and functions for syncing with watch 
-3. receiver.py: Reads and parses incoming BLE data 
-4. db.py: Manages database creation, queries, and updates 
-5. wserver.py: Runs Flask-based web interface
-6. home.html: Displays the session data on the website 
-7. login.html: Creates a login page for users 
-
-Design Report
-
-User Manual
-
-Software Requirements Specification(SRS) 
-
-## How to Clone, Modify, and Push Changes
-
-### 1. Clone the Project to Your Local Machine
-First, you need to clone the project from GitHub to your local computer:
-
-1. Open the terminal (command line tool).
-2. Navigate to the directory where you want to store the project (using the `cd` command).
-3. Open the project’s GitHub repository page, click the **Code** button, and copy the **SSH** or **HTTPS** link.
-4. Run the following command to clone the repository:
-   - If using **SSH**:
-     ```bash
-     git clone git@github.com:username/repository.git
-     ```
-   - If using **HTTPS**:
-     ```bash
-     git clone https://github.com/username/repository.git
-     ```
-
-### 2. Modify Files
-1. Navigate into the project folder:
-   ```bash
-   cd repository
-   ```
-
-## Tips
-
-Before starting any new work, pull the latest changes from the repository to avoid merge conflicts:
-
-```bash
-git pull origin main
+```text
+Hiking-band/
+├── README.md                  Project entry point and run commands
+├── Watch/hikingassistant_RTOS/ Arduino/FreeRTOS watch firmware
+├── RPi/                       Pi receiver, inference, training and web app
+│   └── templates/             Flask login and session pages
+├── docs/                      Requirements, design report, manual and evaluation
+├── tests/                     Offline protocol, inference and storage tests
+└── archive/                   Original course files and non-deployable drafts
 ```
 
-This ensures your local repository is up-to-date with the remote repository.
+Run-generated `RPi/sessions.db`, logs, recordings, model artifacts, editor files and Python caches stay local and are excluded by `.gitignore`. See [the archive index](archive/README.md) for the preserved reference files.
 
+## Status and limitations
 
-### 3. Commit Changes to the Local Git Repository
+The motion pipeline uses a 25 Hz BMA423 accelerometer stream and a Random Forest trained with public wrist data. Training, recorded-data replay and protocol decoding can be tested without hardware. The watch firmware, BLE stability, actual sample timing, power use, and classifier performance on the BMA423 have **not** been verified on the target hardware. This is a research prototype, not a production or safety device.
 
-1. Check which files you have modified:
-   ```bash
-   git status
-   ```
-2. Add the modified files to the staging area:
-   ```bash
-   git add .
-   ```
-This will stage all changes. If you only want to stage a specific file, use:
-   ```bash
-   git add filename
-   ```
+The classifier has four output labels: `idle`, `walking`, `climbing`, and `running`. SELFBack `sitting` and `standing` map to idle, `walking` to walking, `upstairs` to climbing, and `jogging` to running. `downstairs` is excluded from training; hill ascent and true running are not specifically represented by those training labels. Do not interpret the output as validated hill or running detection. All movement recognition depends on wrist placement and behavior.
 
-## Commit the Changes with a Message
+## Architecture
 
-Once the files are staged, commit the changes with a descriptive message:
-
-```bash
-git commit -m "Your commit message"
+```
+T-Watch BMA423 -> 25 Hz sampling task -> bounded queue -> BLE notifications
+                                                         |
+Pi: UUID discovery -> sequence check -> CSV recording -> 2 s window -> features -> model
+                                          |                                |
+                                  recordings/*.csv              session activity summary
 ```
 
-Make sure the commit message is concise but explains the changes you made.
+Watch data uses a 15-byte little-endian packet (`<BHIhhhH`): version/type `0x11`, sequence (uint16), watch uptime in milliseconds (uint32), x/y/z in milligravity (int16), and cumulative queue/sensor drops (uint16). Each notification fits a default 20-byte ATT payload. A detected gap resets the partial inference window. The existing textual step-summary notification is handled separately. Each BLE connection with received motion data produces a CSV file under `RPi/recordings/`; it includes Pi receive time and a gap marker for later labeling and diagnostics. No offline retransmission or end-to-end delivery guarantee is implemented; sequence numbers help detect gaps.
 
-## Push Changes to GitHub
+## Training using public data
 
-To push your changes to the remote repository, run:
+The implementation consumes the ZIP archive of [SELFBack's public wrist50 data](https://github.com/rgu-selfback/Datasets), collected with an Axivity AX3. Check the dataset's citation and usage terms before redistribution. The archive is not included in this repository. Training filters and resamples the 100 Hz recordings to 25 Hz, uses two-second windows with one-second hop, and splits subjects rather than overlapping windows between train and test. For practical runtime, the default uses up to 40 evenly spaced windows from each recording; `--max-windows 0` uses all.
 
-```bash
-git push origin main
+```sh
+python3 -m venv .venv
+. .venv/bin/activate
+pip install numpy scipy scikit-learn==1.6.1
+curl -L -o /tmp/selfback.zip https://github.com/rgu-selfback/Datasets/archive/refs/heads/master.zip
+python RPi/train_public.py /tmp/selfback.zip \
+  --model RPi/activity_model.pkl --report RPi/activity_report.json
 ```
 
-If the default branch is not main, replace main with the correct branch name (e.g., master).
-If you are using HTTPS, the system will prompt you to enter your Personal Access Token as the password.
-If you are using SSH, it will authenticate automatically using your SSH key.
+The report records the label mapping, held-out subjects, per-class metrics and confusion matrix. See [model evaluation](docs/model_evaluation.md) for the held-out results and their limitations. Pickle artifacts must come from a trusted source, and the training and deployment scikit-learn versions must match. The generated model and raw recordings are ignored by Git. A public-data score measures held-out SELFBack participants, not performance on the watch.
 
-## Push Changes to GitHub
+For a quick end-to-end smoke check with a public sample (not a new evaluation score):
 
-To push your changes to the remote repository, run:
-
-```bash
-git push origin main
+```sh
+python RPi/export_public_sample.py /tmp/selfback.zip /tmp/walking.csv --subject 008 --label walking
+python RPi/replay.py /tmp/walking.csv --model RPi/activity_model.pkl
 ```
 
-If the default branch is not main, replace main with the correct branch name (e.g., master).
-If you are using HTTPS, the system will prompt you to enter your Personal Access Token as the password.
-If you are using SSH, it will authenticate automatically using your SSH key.
+## Raspberry Pi deployment
 
-## Verify Your Changes on GitHub
+Use a supported 64-bit Raspberry Pi OS and Python 3.9 or newer; install the Bluetooth and build dependencies required by bluepy for your OS. Train the model in a compatible scikit-learn environment and copy the trusted artifact to `RPi/activity_model.pkl`. Run from the `RPi` directory:
 
-After pushing, visit the GitHub repository page to confirm your commit appears in the project history.
+```sh
+python -m pip install -r requirements.txt
+export HIKING_WATCH_MAC='AA:BB:CC:DD:EE:FF'
+python receiver.py
+# In another terminal:
+python wserver.py
+```
 
----
+The web server binds to `127.0.0.1:5001` by default. `HIKING_BIND` can change the bind address. The existing login/database system is a local prototype with default credentials; do not expose it to untrusted networks without implementing proper authentication and secret management.
+The development login initialized by the receiver is `user123` / `user123`. The web page shows saved sessions, not a live activity feed. `RPi/setup.sh` starts both services in the background after dependencies have been installed; foreground commands are easier to diagnose.
 
+The receiver leaves activity as `unknown` when no compatible model exists. For offline replay of a recording:
+
+```sh
+python replay.py recordings/example.csv --model activity_model.pkl
+```
+
+## Watch firmware
+
+Open `Watch/hikingassistant_RTOS/hikingassistant_RTOS.ino` with an ESP32 Arduino toolchain and the LilyGO TTGO T-Watch library configured for T-Watch 2020 V3. The main application code is in `hikingassistant.cpp`. The firmware uses the library's BMA423 driver and existing FreeRTOS tasks. It configures ±2 g at 25 Hz and converts 1024 LSB/g to mg; verify the library version, device variant, axis orientation, and measured static gravity before deployment. Strong impacts and running may saturate the ±2 g range; validate whether a wider range and retraining are needed.
+
+## Validation
+
+```sh
+python -m unittest discover -s tests -v
+```
+
+The watch sketch was compiled with Arduino ESP32 core 2.0.17 and TTGO TWatch Library 1.4.2. Hardware validation still needed: verify sensor scaling and sampling jitter, notification subscription and reconnects, dropped samples, long-run storage and power use; then collect labeled T-Watch data from multiple sessions and users to measure real-device generalization.

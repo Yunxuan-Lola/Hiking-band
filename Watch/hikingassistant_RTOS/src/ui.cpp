@@ -1,5 +1,6 @@
 #include <Arduino.h>
-#include "ui.h"
+#include "../inc/config.h"
+#include "../inc/ui.h"
 
 static TFT_eSPI *tft = nullptr;
 
