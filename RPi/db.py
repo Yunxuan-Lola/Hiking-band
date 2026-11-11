@@ -6,7 +6,7 @@ import logging
 
 DB_FILE_NAME = 'sessions.db'
 user0 = 'user123'
-password0 = 'password123'
+password0 = 'user123'
 
 DB_SESSION_TABLE = {
     "name": "sessions",
@@ -16,6 +16,8 @@ DB_SESSION_TABLE = {
         "steps integer",
         "burnt_kcal float",
         "session_user text",
+        "activity_mode text",
+        "activity_distribution text",
     ]
 }
 
@@ -26,9 +28,6 @@ DB_PASSWORD_TABLE = {
         "password text",
     ]
 }
-
-# Configure logging
-logging.basicConfig(filename="db.log", level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
 # lock object so multithreaded use of the same
 # HubDatabase object 
@@ -83,7 +82,13 @@ class HubDatabase:
             self.lock.acquire()
 
             try:
-                self.cur.execute(f"INSERT INTO {DB_SESSION_TABLE['name']} VALUES ('{s.id}', {s.km}, {s.steps}, {s.kcal}, '{user}')")
+                import json
+                activity_mode = s.activity_mode if hasattr(s, 'activity_mode') else 'unknown'
+                activity_dist_str = json.dumps(s.activity_distribution) if hasattr(s, 'activity_distribution') else '{}'
+                self.cur.execute(
+                    f"INSERT INTO {DB_SESSION_TABLE['name']} VALUES (?, ?, ?, ?, ?, ?, ?)",
+                    (s.id, s.km, s.steps, s.kcal, user, activity_mode, activity_dist_str)
+                )
                 logging.info(f"Session {s.id} saved successfully for user {user}.")
             except sqlite3.IntegrityError:
                 print("WARNING: Session ID already exists in database! Aborting saving current session.")
@@ -95,17 +100,36 @@ class HubDatabase:
     def get_sessions(self, user_id:str) -> list[hike.HikeSession]:
         try:
             self.lock.acquire()
-            rows = self.cur.execute(f"SELECT * FROM {DB_SESSION_TABLE['name']} WHERE session_user='{user_id}'").fetchall()
+            rows = self.cur.execute(
+                f"SELECT * FROM {DB_SESSION_TABLE['name']} WHERE session_user=? ORDER BY session_id DESC",
+                (user_id,)
+            ).fetchall()
         finally:
             self.lock.release()
 
         return list(map(lambda r: hike.from_list(r), rows))
 
+    def migrate_database(self):
+        try:
+            self.lock.acquire()
+            try:
+                self.cur.execute("PRAGMA table_info(sessions)")
+                columns = [col[1] for col in self.cur.fetchall()]
+                if 'activity_mode' not in columns:
+                    self.cur.execute("ALTER TABLE sessions ADD COLUMN activity_mode text")
+                    self.cur.execute("ALTER TABLE sessions ADD COLUMN activity_distribution text")
+                    self.con.commit()
+                    logging.info("Database migrated successfully - added activity mode columns")
+            except Exception as e:
+                logging.warning(f"Migration warning: {e}")
+        finally:
+            self.lock.release()
+
         
     def login_check(self, user: str, pwd) -> bool:
         try:
             self.lock.acquire()
-            rows = self.cur.execute(f"SELECT * FROM {DB_PASSWORD_TABLE['name']} WHERE username = '{user}' AND password = '{pwd}'").fetchall()
+            rows = self.cur.execute(f"SELECT * FROM {DB_PASSWORD_TABLE['name']} WHERE username = ? AND password = ?", (user, pwd)).fetchall()
         finally:
             self.lock.release()
 

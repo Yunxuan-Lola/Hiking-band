@@ -1,28 +1,82 @@
 <!DOCTYPE html>
+<html>
 <head>
-    <title>Hiking Assistant</title>
+    <title>Hiking Assistant with Activity Recognition</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        h1 { color: #2c3e50; }
+        .logout-link { color: #e74c3c; text-decoration: none; }
+        .session-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 16px;
+            background: #fafafa;
+        }
+        .session-header {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #34495e;
+        }
+        .session-details { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+        .detail-item { padding: 8px; background: #fff; border-radius: 4px; }
+        .detail-label { font-weight: bold; color: #7f8c8d; }
+        .activity-tag { display: inline-block; padding: 4px 12px; border-radius: 20px; font-weight: bold; margin-right: 8px; }
+        .activity-idle { background: #95a5a6; color: white; }
+        .activity-walking { background: #3498db; color: white; }
+        .activity-climbing { background: #8e44ad; color: white; }
+        .activity-jogging { background: #e67e22; color: white; }
+        .activity-running { background: #e74c3c; color: white; }
+        .activity-unknown { background: #bdc3c7; color: white; }
+    </style>
 </head>
 <body>
-    <h1>Previous Hiking Sessions for {{user}}</h1>
+    <h1>Hiking Assistant with Activity Recognition</h1>
+    <h2>Previous Hiking Sessions for {{user}}</h2>
 
-    <p><a href="{{ url_for('get_logout') }}">Logout</a></p>
+    <p><a href="{{ url_for('get_logout') }}" class="logout-link">Logout</a></p>
 
     {% if sessions %}
-        <ul>
-        {% for session in sessions | reverse %}
-            <li>
-                <strong>Session:</strong> {{ session.id | string }}<br>
-		        <strong>Steps:</strong> {{ session.steps }}<br>
-                <strong>Distance (km):</strong> {{ session.km }}<br>
-                <strong>Burnt Calories (kcal):</strong> {{ session.kcal | int}}<br>
-		        <br>
-	        </li>
+        {% for session in sessions %}
+            <div class="session-card">
+                <div class="session-header">
+                    Session: {{ session.id | string }}
+                    {% if session.activity_mode and session.activity_mode != 'unknown' %}
+                        <span class="activity-tag activity-{{ session.activity_mode }}">{{ session.activity_mode | upper }}</span>
+                    {% else %}
+                        <span class="activity-tag activity-unknown">UNKNOWN</span>
+                    {% endif %}
+                </div>
+                <div class="session-details">
+                    <div class="detail-item">
+                        <span class="detail-label">Steps:</span> {{ session.steps }}
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Distance:</span> {{ session.km }} km
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Calories:</span> {{ session.kcal | int }} kcal
+                    </div>
+                    {% if session.activity_distribution %}
+                        <div class="detail-item">
+                            <span class="detail-label">Activity Distribution:</span><br>
+                            {% for activity, percent in session.activity_distribution.items() %}
+                                <small>{{ activity }}: {{ (percent * 100) | round }}%</small><br>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
         {% endfor %}
-        </ul>
     {% else %}
-        <p>No sessions available.</p>
+        <p>No sessions available yet. Start hiking to record your first session!</p>
     {% endif %}
-    
+
 </body>
 </html>
-

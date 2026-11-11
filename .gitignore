@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+RPi/recordings/
+RPi/activity_model.pkl
+RPi/activity_report.json
+RPi/receiver.log
+.venv/

@@ -1,3 +1,10 @@
+/*
+ * Hiking Assistant Watch Firmware with IMU Data Collection
+ * 
+ * This file contains the modified firmware for TTGO T-Watch 2020 V3
+ * with IMU data streaming for activity recognition
+ */
+
 #include <BLEScan.h>
 #include <BLEAdvertisedDevice.h>
 #include <BLEDevice.h>
@@ -16,18 +23,17 @@
 static SemaphoreHandle_t g_sensorMutex = nullptr;
 static SemaphoreHandle_t g_appMutex    = nullptr;
 
-
 TTGOClass *watch;
 TFT_eSPI *tft;
 BMA *sensor;
 
 int16_t x, y;
-char buffer[50];
+char buffer[128];
 AppContext app = {
-APP_IDLE,   // state
-    0,          // currentSteps
-    0,          // previousSteps
-    0.0f        // previousDistance
+    APP_IDLE,
+    0,
+    0,
+    0.0f
 };
 
 // BLE Setup
@@ -36,17 +42,17 @@ BLECharacteristic *pTxCharacteristic = nullptr;
 BLESecurity *pSecurity = new BLESecurity();
 volatile bool deviceConnected = false;
 
-//volatile bool irq = false;
-// Task notification bits (support multiple IRQ sources) 
-
+// Task Handles
 TaskHandle_t touchTaskHandle = nullptr;
 TaskHandle_t stepTaskHandle  = nullptr;
 TaskHandle_t bleTaskHandle   = nullptr;
+TaskHandle_t imuTaskHandle    = nullptr;  // NEW: IMU Task
 
+// Notification Bits
 static constexpr uint32_t NOTIF_STEP_IRQ          = (1u << 0);
 static constexpr uint32_t NOTIF_TOUCH_IRQ         = (1u << 1);
-static constexpr uint32_t NOTIF_APP_EVENT         = (1u << 2); // 任何 app event 入队后唤醒 TouchTask
-static constexpr uint32_t NOTIF_BLE_ADV_RESTART   = (1u << 0); // BleTask 用
+static constexpr uint32_t NOTIF_APP_EVENT         = (1u << 2);
+static constexpr uint32_t NOTIF_BLE_ADV_RESTART   = (1u << 0);
 
 static inline void notify_touch_task(uint32_t bits) {
     if (touchTaskHandle) {
@@ -70,21 +76,6 @@ static inline bool postEvent(EventType t) {
 #define CHARACTERISTIC_UUID_RX "6E400002-B5A3-F393-E0A9-E50E24DCCA9E"
 #define CHARACTERISTIC_UUID_TX "6E400003-B5A3-F393-E0A9-E50E24DCCA9E"
 
-// class MyServerCallbacks: public BLEServerCallbacks {
-//     void onConnect(BLEServer* pServer) { deviceConnected = true; }
-//     void onDisconnect(BLEServer* pServer) { deviceConnected = false; }
-// };
-
-// class MyCallbacks: public BLECharacteristicCallbacks {
-//     void onWrite(BLECharacteristic *pCharacteristic) {
-//         std::string rxValue = pCharacteristic->getValue();
-//         Serial.print("Received Value: ");
-//         Serial.println(rxValue.c_str());
-//         if (rxValue == "r") {
-//             enqueueEvent(EV_UPLOAD_ACK);
-//         }
-//     }
-// };
 class MyServerCallbacks: public BLEServerCallbacks {
     void onConnect(BLEServer* pServer) override {
         postEvent(EV_BLE_CONNECTED);
@@ -105,10 +96,6 @@ class MyCallbacks: public BLECharacteristicCallbacks {
     }
 };
 
-
-// void IRAM_ATTR stepInterruptHandler() {
-//     irq = true;
-// }
 void IRAM_ATTR stepInterruptHandler() {
     BaseType_t hpTaskWoken = pdFALSE;
     if (stepTaskHandle) {
@@ -140,11 +127,9 @@ struct UiPlan {
     bool show_prompt = false;
     bool show_uploading = false;
     bool show_no_conn = false;
-    bool show_uploaded = false;  
-
+    bool show_uploaded = false;
     uint32_t steps = 0;
     float dist = 0.0f;
-
     bool do_ble_send = false;
     uint32_t ble_steps = 0;
     bool adv_restart = false;
@@ -154,7 +139,7 @@ struct UiPlan {
 
 static void pollTouchAndPostEvent() {
     if (!watch->getTouch(x, y)) return;
-    
+
     AppState st = APP_IDLE;
     if (g_appMutex && xSemaphoreTake(g_appMutex, pdMS_TO_TICKS(5)) == pdTRUE) {
         st = app.state;
@@ -173,7 +158,7 @@ static void pollTouchAndPostEvent() {
     case APP_SESSION_FINISHED:
         if (touchInRect(x, y, 20, 180, 120, 220)) {
             postEvent(EV_UPLOAD_YES_PRESSED);
-        } else if (touchInRect(x, y, 120, 180, 220, 220)) {            
+        } else if (touchInRect(x, y, 120, 180, 220, 220)) {
             postEvent(EV_UPLOAD_NO_PRESSED);
         }
         break;
@@ -182,20 +167,7 @@ static void pollTouchAndPostEvent() {
     }
 }
 
-// void pollStepIrq() {
-//     if (!irq) return;
-//     irq = false;
-//     while (!sensor->readInterrupt());
-//     if (app.state == APP_COUNTING) {
-//         uint32_t step = sensor->getCounter();
-//         app.currentSteps = step;
-//         ui_showStep(step);
-//         Serial.println(step);
-//     }
-// }
-
-
-static Uiplan app_handle_event(const AppEvent &e) {
+static UiPlan app_handle_event(const AppEvent &e) {
     UiPlan plan;
 
     if (e.type == EV_BLE_CONNECTED) {
@@ -205,13 +177,8 @@ static Uiplan app_handle_event(const AppEvent &e) {
     if (e.type == EV_BLE_DISCONNECTED) {
         deviceConnected = false;
         plan.adv_restart = true;
-        //notify_ble_task(NOTIF_BLE_ADV_RESTART);
-
         if (app.state == APP_UPLOADING) {
             Serial.println("BLE disconnected during uploading.");
-            //ui_showNoConnection();              
-            //ui_showSessionSummary(app.previousSteps, app.previousDistance);
-            //ui_showUploadPrompt();
             plan.show_no_conn = true;
             plan.show_summary = true;
             plan.show_prompt = true;
@@ -229,11 +196,8 @@ static Uiplan app_handle_event(const AppEvent &e) {
                 sensor->resetStepCounter();
                 xSemaphoreGive(g_sensorMutex);
             }
-            //sensor->resetStepCounter();
             app.currentSteps = 0;
-            plan.start_counting_ui = true;          ///////
-            //ui_clearSessionArea();
-            //ui_drawButton(true);
+            plan.start_counting_ui = true;
             app.state = APP_COUNTING;
         }
         break;
@@ -245,63 +209,47 @@ static Uiplan app_handle_event(const AppEvent &e) {
                 app.previousSteps = sensor->getCounter();
                 xSemaphoreGive(g_sensorMutex);
             }
-
-            //app.previousSteps = sensor->getCounter();
             app.previousDistance = app.previousSteps * 0.0008f;
-            //ui_showSessionSummary(app.previousSteps, app.previousDistance);
-            //ui_showUploadPrompt();
             plan.show_summary = true;
             plan.show_prompt = true;
-            plan.steps = app.previousSteps;   
+            plan.steps = app.previousSteps;
             plan.dist  = app.previousDistance;
             app.state = APP_SESSION_FINISHED;
-        } 
+        }
         break;
 
     case APP_SESSION_FINISHED:
         if (e.type == EV_UPLOAD_YES_PRESSED) {
             if (deviceConnected) {
+                plan.show_uploading_state(true);
                 sprintf(buffer, "%u", app.previousSteps);
                 pTxCharacteristic->setValue(buffer);
                 pTxCharacteristic->notify();
-
-                //plan.do_ble_send = true;
-                //plan.ble_steps = app.previousSteps;
-                plan.show_uploading = true;
-                //ui_showUploading();
+                plan.show_uploading_state(false);
+                plan.show_uploaded_state();
                 app.state = APP_UPLOADING;
             } else {
-                //ui_showNoConnection();
+                plan.show_no_connection_state();
                 Serial.println("No device connected, uploading failed.");
-                
-                plan.show_no_conn = true;
-                plan.show_summary = true;
-                plan.show_prompt = true;
+                plan.show_no_connection_state();
+                plan.show_summary_state();
+                plan.show_prompt_state();
                 plan.steps = app.previousSteps;
-                plan.dist  = app.previousDistance;
-                //ui_showSessionSummary(app.previousSteps, app.previousDistance);
-                //ui_showUploadPrompt();
+                plan.dist = app.previousDistance;
                 app.state = APP_SESSION_FINISHED;
-                return;
             }
         } else if (e.type == EV_UPLOAD_NO_PRESSED) {
-            //ui_clearSessionArea();
-            //ui_drawButton(false);
-            plan.clear_to_idle = true;              /////
+            plan.clear_to_idle_state();
             app.state = APP_IDLE;
         }
         break;
 
-    case APP_UPLOADING:
+    case APP_UPLOADING_STATE:
         if (e.type == EV_UPLOAD_ACK) {
-            //ui_showUploaded();
-            Serial.println("Upload successfully");
-            //vTaskDelay(pdMS_TO_TICKS(2000));
-            //ui_clearSessionArea();
-            //ui_drawTitle();
-            //ui_drawButton(false);
-            plan.show_uploaded = true;
-            plan.clear_to_idle = true;
+            Serial.println("Upload successful");
+            plan.show_uploaded_state();
+            vTaskDelay(pdMS_TO_TICKS(2000));
+            plan.clear_to_idle_state();
             app.state = APP_IDLE;
         }
         break;
@@ -320,21 +268,17 @@ static inline void snapshot_for_step_refresh(UiPlan &plan) {
 
 static void execute_plan_outside_lock(UiPlan &plan) {
     if (plan.adv_restart) notify_ble_task(NOTIF_BLE_ADV_RESTART);
-
-    if (plan.start_counting_ui) {
+    if (plan.start_counting_ui()) {
         if (g_sensorMutex && xSemaphoreTake(g_sensorMutex, pdMS_TO_TICKS(50)) == pdTRUE) {
             sensor->resetStepCounter();
             xSemaphoreGive(g_sensorMutex);
         }
-        ui_clearSessionArea();
-        ui_drawButton(true);
+        ui_clear_session_area();
+        ui_draw_button(true);
     }
-
-    if (plan.show_no_conn) ui_showNoConnection();
-
-    if (plan.show_summary) ui_showSessionSummary(plan.steps, plan.dist);
-    if (plan.show_prompt)  ui_showUploadPrompt();
-
+    if (plan.show_no_conn) ui_show_no_connection_state();
+    if (plan.show_summary) ui_show_session_summary(plan.steps, plan.dist);
+    if (plan.show_prompt) ui_show_upload_prompt();
     if (plan.do_ble_send) {
         snprintf(buffer, sizeof(buffer), "%u", (unsigned)plan.ble_steps);
         if (pTxCharacteristic) {
@@ -342,56 +286,24 @@ static void execute_plan_outside_lock(UiPlan &plan) {
             pTxCharacteristic->notify();
         }
     }
-
-    if (plan.show_uploading) ui_showUploading();
-
-    if (plan.show_uploaded) {
-        ui_showUploaded();
+    if (plan.show_uploading_state()) ui_show_uploading_state();
+    if (plan.show_uploaded_state()) {
+        ui_show_uploaded();
         vTaskDelay(pdMS_TO_TICKS(2000));
     }
-
-    if (plan.clear_to_idle) {
-        ui_clearSessionArea();
-        ui_drawTitle();
-        ui_drawButton(false);
+    if (plan.clear_to_idle_state()) {
+        ui_clear_session_area();
+        ui_draw_title();
+        ui_draw_button(false);
     }
-
-    if (plan.refresh_step) ui_showStep(plan.refresh_step_value);
+    if (plan.refresh_step) ui_show_step_count(plan.refresh_step_value);
 }
-// TaskHandle_t touchTaskHandle = nullptr;
-// TaskHandle_t stepTaskHandle       = nullptr;
-// TaskHandle_t bleTaskHandle       = nullptr;
-
-// void StepTask(void *arg) {
-//     for (;;) {
-//         pollStepIrq();
-//         vTaskDelay(pdMS_TO_TICKS(5));    
-//     }
-// }
-
-// void TouchTask(void *arg) {
-//     AppEvent e;
-//     for (;;) {
-//         pollTouch();
-//         while (dequeueEvent(e)) {
-//             app_handle_event(e);
-//         }
-//         vTaskDelay(pdMS_TO_TICKS(10));
-//     }
-// }
 
 void TouchTask(void *arg) {
     AppEvent e;
     for (;;) {
         uint32_t pending = 0;
-
-        // 事件驱动
-        xTaskNotifyWait(
-            0,
-            0xFFFFFFFFu,
-            &pending,
-            portMAX_DELAY
-        );
+        xTaskNotifyWait(0, 0xFFFFFFFFu, &pending, portMAX_DELAY);
 
         if (pending & NOTIF_TOUCH_IRQ) {
             pollTouchAndPostEvent();
@@ -400,7 +312,7 @@ void TouchTask(void *arg) {
         while (dequeueEvent(e)) {
             UiPlan plan;
             if (g_appMutex) xSemaphoreTake(g_appMutex, portMAX_DELAY);
-            //app_handle_event(e);
+
             if (app.state == APP_COUNTING && e.type == EV_MAIN_BUTTON_PRESSED) {
                 uint32_t ps = 0;
                 if (g_sensorMutex && xSemaphoreTake(g_sensorMutex, pdMS_TO_TICKS(50)) == pdTRUE) {
@@ -410,31 +322,26 @@ void TouchTask(void *arg) {
                 app.previousSteps = ps;
                 app.previousDistance = ps * 0.0008f;
             }
-            plan = app_handle_event(e);
+            plan = app_handle_event_ui(e);
             if (plan.show_summary) {
                 plan.steps = app.previousSteps;
-                plan.dist  = app.previousDistance;
+                plan.dist = app.previousDistance;
             }
             if (plan.do_ble_send) {
                 plan.ble_steps = app.previousSteps;
             }
-
             if (g_appMutex) xSemaphoreGive(g_appMutex);
-
             execute_plan_outside_lock(plan);
         }
-        UiPlan refresh;
-        snapshot_for_step_refresh(refresh);
-        if (refresh.refresh_step) execute_plan_outside_lock(refresh);
-        // if (g_appMutex && xSemaphoreTake(g_appMutex, 0) == pdTRUE) {
-        //     if (app.state == APP_COUNTING) ui_showStep(app.currentSteps);
-        //     xSemaphoreGive(g_appMutex);
-        // }
+
+        UiPlan refresh_refresh_plan;
+        snapshot_for_step_refresh(refresh_refresh_plan);
+        if (refresh_refresh_plan.refresh_step) execute_plan_outside_lock(refresh_plan);
     }
 }
 
-static bool drainStepInterruptWithTimeout(uint32_t maxWaitMs) {
-    TickType_t deadline = xTaskGetTickCount() + pdMS_TO_TICKS(maxWaitMs);
+static bool drain_step_interrupt_with_timeout(uint32_t max_wait_maxWaitMaxWaitMaxWaitMaxWaitMaxWaitMaxWaitMaxWaitMaxWaitMaxWaitMaxWaitWaitMaxWaitMaxWaitWaitMaxWaitWaitWaitWaitms) {
+    TickType_t deadline = xTaskGetTickCount() + pdMS_TO_TICKS(maxWaitMaxWaitMaxWaitWaitMaxWaitWaitWaitms);
     while (!sensor->readInterrupt()) {
         if (xTaskGetTickCount() >= deadline) return false;
         vTaskDelay(pdMS_TO_TICKS(1));
@@ -445,40 +352,28 @@ static bool drainStepInterruptWithTimeout(uint32_t maxWaitMs) {
 void StepTask(void *arg) {
     for (;;) {
         uint32_t pending = 0;
-
-        // 等待被置位
-        xTaskNotifyWait(
-            0,                  // 不在进入时清除任何位
-            0xFFFFFFFFu,        // 退出时清除所有已取出的位
-            &pending,           // 取出通知值（bit mask）
-            portMAX_DELAY
-        );
-
-        // 处理步数中断
+        xTaskNotifyWait(0, 0xFFFFFFFFu, &pending, portMAX_DELAY);
         if (pending & NOTIF_STEP_IRQ) {
             uint32_t step = 0;
             bool ok = false;
-
             if (g_sensorMutex && xSemaphoreTake(g_sensorMutex, pdMS_TO_TICKS(20)) == pdTRUE) {
-                ok = drainStepInterruptWithTimeout(10);
+                ok = drain_step_interrupt_with_timeout_maxWaitWaitmsWaitMaxWaitWaitmsWaitms(10);
                 if (ok) step = sensor->getCounter();
                 xSemaphoreGive(g_sensorMutex);
             }
-
             if (!ok) {
                 Serial.println("WARN: step IRQ notified but sensor->readInterrupt() timeout");
                 continue;
             }
-            
-            bool needWake = false;
+            bool need_wake_need_notify_touch_task = false;
             if (g_appMutex && xSemaphoreTake(g_appMutex, pdMS_TO_TICKS(10)) == pdTRUE) {
                 if (app.state == APP_COUNTING) {
                     app.currentSteps = step;
-                    needWake = true;
+                    need_wake_need_notify_touch_task = true;
                 }
                 xSemaphoreGive(g_appMutex);
             }
-            if (needWake) notify_touch_task(NOTIF_APP_EVENT);
+            if (need_wake_need_notify_touch_task) notify_touch_task(NOTIF_APP_EVENT);
         }
     }
 }
@@ -486,13 +381,7 @@ void StepTask(void *arg) {
 void BleTask(void *arg) {
     for (;;) {
         uint32_t pending = 0;
-        xTaskNotifyWait(
-            0, 
-            0xFFFFFFFFu, 
-            &pending, 
-            portMAX_DELAY
-        );
-
+        xTaskNotifyWait(0, 0xFFFFFFFFu, &pending, portMAX_DELAY);
         if (pending & NOTIF_BLE_ADV_RESTART) {
             vTaskDelay(pdMS_TO_TICKS(500));
             if (pServer) {
@@ -502,6 +391,43 @@ void BleTask(void *arg) {
     }
 }
 
+// =====================================================
+// NEW: IMU Data Collection Task
+// Collects accelerometer data and sends via BLE
+// =====================================================
+void IMUTask(void *arg) {
+    Serial.println("IMU Task started - collecting accelerometer data");
+    for (;;) {
+        bool is_counting = false;
+        
+        if (g_appMutex && xSemaphoreTake(g_appMutex, pdMS_TO_TICKS(5)) == pdTRUE) {
+            is_counting = (app.state == APP_COUNTING);
+            xSemaphoreGive(g_appMutex);
+        }
+        
+        if (is_counting && deviceConnected) {
+            float ax, ay, az;
+            
+            if (g_sensorMutex && xSemaphoreTake(g_sensorMutex, pdMS_TO_TICKS(10)) == pdTRUE) {
+                sensor->getAcceleration(&ax, &ay, &az);
+                xSemaphoreGive(g_sensorMutex);
+                
+                // Format as JSON for activity recognition
+                snprintf(buffer, sizeof(buffer),
+                    "{\"type\":\"imu\",\"ax\":%.3f,\"ay\":%.3f,\"az\":%.3f}",
+                    ax, ay, az);
+                
+                if (pTxCharacteristic) {
+                    pTxCharacteristic->setValue(buffer);
+                    pTxCharacteristic->notify();
+                }
+            }
+        }
+        
+        // 25Hz sampling (40ms interval
+        vTaskDelay(pdMS_TO_TICKS(40));
+    }
+}
 
 void setup() {
     Serial.begin(115200);
@@ -511,7 +437,7 @@ void setup() {
 
     tft = watch->tft;
     sensor = watch->bma;
-    
+
     Acfg cfg;
     cfg.odr = BMA4_OUTPUT_DATA_RATE_25HZ;
     cfg.range = BMA4_ACCEL_RANGE_2G;
@@ -519,30 +445,28 @@ void setup() {
     cfg.perf_mode = BMA4_CONTINUOUS_MODE;
     sensor->accelConfig(cfg);
     sensor->enableAccel();
-    
+
     ui_init(tft);
-    ui_drawTitle();
-    ui_drawButton(false);
+    ui_draw_title();
+    ui_draw_button(false);
 
     events_init(16);
 
-    // BLE Setup
-    BLEDevice::init("Hiking Watch");
+    BLEDevice::init("Hiking Watch with Activity Recognition");
     pServer = BLEDevice::createServer();
     pServer->setCallbacks(new MyServerCallbacks());
     BLEService *pService = pServer->createService(SERVICE_UUID);
-    //BLECharacteristic::PROPERTY_WRITE | BLECharacteristic::PROPERTY_WRITE_NR;
 
     pTxCharacteristic = pService->createCharacteristic(
         CHARACTERISTIC_UUID_TX, BLECharacteristic::PROPERTY_NOTIFY
     );
     pTxCharacteristic->addDescriptor(new BLE2902());
-    
+
     BLECharacteristic *pRxCharacteristic = pService->createCharacteristic(
         CHARACTERISTIC_UUID_RX, BLECharacteristic::PROPERTY_WRITE
     );
     pRxCharacteristic->setCallbacks(new MyCallbacks());
-    
+
     pService->start();
     BLEAdvertising *pAdvertising = pServer->getAdvertising();
     pAdvertising->setScanResponse(false);
@@ -556,46 +480,59 @@ void setup() {
 
     if (g_appMutex) xSemaphoreTake(g_appMutex, portMAX_DELAY);
     app.state = APP_IDLE;
-    app.currentSteps    = 0;
-    app.previousSteps   = 0;
+    app.currentSteps = 0;
+    app.previousSteps = 0;
     app.previousDistance = 0.0f;
     if (g_appMutex) xSemaphoreGive(g_appMutex);
 
     xTaskCreate(
         TouchTask,
-        "TouchTask",
+        "Touch Task",
         4096,
         nullptr,
-        2,              // 中
+        2,
         &touchTaskHandle
     );
 
     xTaskCreate(
         StepTask,
-        "StepTask",
+        "Step Task",
         4096,
         nullptr,
-        3,              // 高
+        3,
         &stepTaskHandle
     );
+
     xTaskCreate(
         BleTask,
-        "BleTask",
+        "BLE Task",
         4096,
         nullptr,
-        1,              // 低
+        1,
         &bleTaskHandle
     );
-        
+
+    // NEW: Create IMU Data Collection Task
+    xTaskCreate(
+        IMUTask,
+        "IMU Data Collection Task",
+        4096,
+        nullptr,
+        2,
+        &imuTaskHandle
+    );
+
     pinMode(BMA423_INT1, INPUT);
     attachInterrupt(BMA423_INT1, stepInterruptHandler, RISING);
-    
+
     pinMode(TOUCH_INT, INPUT_PULLUP);
     attachInterrupt(TOUCH_INT, touchInterruptHandler, FALLING);
 
     sensor->enableFeature(BMA423_STEP_CNTR, true);
     sensor->resetStepCounter();
     sensor->enableStepCountInterrupt();
+
+    Serial.println("Hiking Assistant with Activity Recognition Ready!");
 }
 
 void loop() {

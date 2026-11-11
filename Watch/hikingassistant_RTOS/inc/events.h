@@ -10,6 +10,11 @@ enum AppState {
 
 enum EventType {
     EV_NONE = 0,
+    EV_BLE_CONNECTED,
+    EV_BLE_DISCONNECTED,
+    EV_MAIN_BUTTON_PRESSED,
+    EV_UPLOAD_YES_PRESSED,
+    EV_UPLOAD_NO_PRESSED,
     EV_START,
     EV_STOP,
     EV_UPLOAD_SELECTED,
@@ -31,3 +36,4 @@ struct AppContext {
 
 bool enqueueEvent(EventType t);
 bool dequeueEvent(AppEvent &e);
+void events_init(unsigned size);
