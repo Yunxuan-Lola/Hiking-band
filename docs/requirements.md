@@ -23,7 +23,7 @@ The nominal motion period is 40 ms; actual jitter and BLE throughput have not be
 | R1-R2 | `Watch/hikingassistant_RTOS/hikingassistant.cpp` | Compile check; hardware measurement pending |
 | R3-R4 | `RPi/bt.py`, `RPi/stream_protocol.py` | Packet, gap, and CSV worker tests |
 | R5 | `RPi/features.py`, `RPi/activity_rec.py` | Window/feature tests and offline replay |
-| R6 | `RPi/db.py`, `RPi/wserver.py`, `RPi/home.html` | Database tests; browser/hardware workflow pending |
-| R7 | `RPi/train_public.py`, `MODEL_EVALUATION.md` | Subject-disjoint public-data evaluation |
+| R6 | `RPi/db.py`, `RPi/wserver.py`, `RPi/templates/home.html` | Database tests; browser/hardware workflow pending |
+| R7 | `RPi/train_public.py`, `docs/model_evaluation.md` | Subject-disjoint public-data evaluation |
 
 The design report and user manual are `docs/design_report.md` and `docs/user_manual.md`.

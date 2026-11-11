@@ -1,7 +1,19 @@
+# Local editor and OS files
+.DS_Store
+*.swp
+
+# Python environments and caches
 __pycache__/
 *.pyc
+.venv/
+
+# Device recordings and local application state
 RPi/recordings/
+RPi/logs/
+RPi/sessions.db
+RPi/*.log
 RPi/activity_model.pkl
 RPi/activity_report.json
-RPi/receiver.log
-.venv/
+
+# Arduino build output
+Watch/**/build/

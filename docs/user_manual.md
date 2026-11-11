@@ -70,7 +70,7 @@ python RPi/export_public_sample.py /path/to/selfback.zip /tmp/walking.csv --subj
 python RPi/replay.py /tmp/walking.csv --model RPi/activity_model.pkl
 ```
 
-Replay checks the data path, not watch accuracy. Public data came from an Axivity AX3 sensor. The current held-out results and known walking/upstairs confusion are in `MODEL_EVALUATION.md`.
+Replay checks the data path, not watch accuracy. Public data came from an Axivity AX3 sensor. The held-out results and known walking/upstairs confusion are in `docs/model_evaluation.md`.
 
 ## 7. Files and troubleshooting
 

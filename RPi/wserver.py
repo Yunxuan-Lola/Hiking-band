@@ -9,7 +9,7 @@ import time
 import os
 import secrets
 
-app = Flask(__name__, template_folder=".")
+app = Flask(__name__, template_folder="templates")
 app.secret_key = os.environ.get('HIKING_SECRET_KEY') or secrets.token_hex(32)
 hdb = db.HubDatabase()
 

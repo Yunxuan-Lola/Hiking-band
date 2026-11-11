@@ -4,10 +4,26 @@ TTGO T-Watch 2020 V3 collects wrist accelerometer data and sends it over BLE to 
 
 ## Documentation
 
+- [Document index](docs/README.md): all project documents, including Chinese summaries.
 - [Design report](docs/design_report.md) and [PDF](docs/design_report.pdf): architecture, packet format, storage, failure handling, and verification status.
 - [User manual](docs/user_manual.md) and [PDF](docs/user_manual.pdf): setup, watch workflow, offline checks, files, and troubleshooting.
 - [Software requirements](docs/requirements.md): functional behavior and operating constraints.
-- [Model evaluation](MODEL_EVALUATION.md): public-data metrics and limitations.
+- [Model evaluation](docs/model_evaluation.md): public-data metrics and limitations.
+
+## Repository layout
+
+```text
+Hiking-band/
+├── README.md                  Project entry point and run commands
+├── Watch/hikingassistant_RTOS/ Arduino/FreeRTOS watch firmware
+├── RPi/                       Pi receiver, inference, training and web app
+│   └── templates/             Flask login and session pages
+├── docs/                      Requirements, design report, manual and evaluation
+├── tests/                     Offline protocol, inference and storage tests
+└── archive/                   Original course files and non-deployable drafts
+```
+
+Run-generated `RPi/sessions.db`, logs, recordings, model artifacts, editor files and Python caches stay local and are excluded by `.gitignore`. See [the archive index](archive/README.md) for the preserved reference files.
 
 ## Status and limitations
 
@@ -40,7 +56,7 @@ python RPi/train_public.py /tmp/selfback.zip \
   --model RPi/activity_model.pkl --report RPi/activity_report.json
 ```
 
-The report records the label mapping, held-out subjects, per-class metrics and confusion matrix. See [MODEL_EVALUATION.md](MODEL_EVALUATION.md) for the current run and its limitations. Pickle artifacts must come from a trusted source, and the training and deployment scikit-learn versions must match. The generated model and raw recordings are ignored by Git. A public-data score measures held-out SELFBack participants, not performance on the watch.
+The report records the label mapping, held-out subjects, per-class metrics and confusion matrix. See [model evaluation](docs/model_evaluation.md) for the held-out results and their limitations. Pickle artifacts must come from a trusted source, and the training and deployment scikit-learn versions must match. The generated model and raw recordings are ignored by Git. A public-data score measures held-out SELFBack participants, not performance on the watch.
 
 For a quick end-to-end smoke check with a public sample (not a new evaluation score):
 
@@ -72,7 +88,7 @@ python replay.py recordings/example.csv --model activity_model.pkl
 
 ## Watch firmware
 
-Open `Watch/hikingassistant_RTOS/hikingassistant_RTOS.ino` with an ESP32 Arduino toolchain and the LilyGO TTGO T-Watch library configured for T-Watch 2020 V3. The main application code is in `hikingassistant.cpp`. The firmware uses the library's BMA423 driver and existing FreeRTOS tasks. It configures ±2 g at 25 Hz and converts 1024 LSB/g to mg; verify the library version, device variant, axis orientation, and measured static gravity before deployment. Strong impacts and running may saturate the ±2 g range; validate whether a wider range and retraining are needed. The old nested `hikingassistant_with_activity_recognition` sketch is an earlier draft and is not the canonical firmware.
+Open `Watch/hikingassistant_RTOS/hikingassistant_RTOS.ino` with an ESP32 Arduino toolchain and the LilyGO TTGO T-Watch library configured for T-Watch 2020 V3. The main application code is in `hikingassistant.cpp`. The firmware uses the library's BMA423 driver and existing FreeRTOS tasks. It configures ±2 g at 25 Hz and converts 1024 LSB/g to mg; verify the library version, device variant, axis orientation, and measured static gravity before deployment. Strong impacts and running may saturate the ±2 g range; validate whether a wider range and retraining are needed.
 
 ## Validation
 
